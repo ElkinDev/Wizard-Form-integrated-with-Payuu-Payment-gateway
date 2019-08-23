@@ -69,25 +69,22 @@ session_start();
 			<div class="image-holder">
 				<img src="images/form-wizard.png" alt="">
 			</div>
-            <form method="post" id="frmaccion" action="https://checkout.payulatam.com/ppp-web-gateway-payu/" target="_blank"  >
-            	<!-- SECTION 1<div class="form-header">
-            		<a href="#">Formulario de Admision</a>
-            		<h3>Solicitud de Admision</h3>
-            	</div> -->
+            <form method="post" id="frmaccion" action="https://sandbox.checkout.payulatam.com/ppp-web-gateway-payu" target="_blank" novalidate >
+            	<!--  -->
             	<div id="wizard">
             		<!-- SECTION 1 -->
 	                <h4></h4>
 	                <section>
 	                	<h3>DATOS DEL CANDIDATO</h3>
 
-	                   	<div class="row">
+	                   	<div class="row mb-4">
 	                   		<div class="col-md-6">
-	                   		<div class="form-row" style="margin-bottom: 26px;">
-		                    	<label for="">
+	                   		<div class="form-row" >
+		                    	<label for="validationCustom01">
 		                    		Curso al cual aspira el candidato
 		                    	</label>
 	                    	<div class="form-holder">
-	                    		<select name="" id="" class="form-control">
+	                    		<select name="cursocan" id='cursocan' class="form-control" required>
 									<option value="Primer Jardín" class="option">Primer Jardín</option>
 									<option value="Segundo Jardín" class="option">Segundo Jardín</option>
 									<option value="1° de primaria" class="option">1° de primaria</option>
@@ -98,6 +95,8 @@ session_start();
 								</select>
 								<i class="zmdi zmdi-caret-down"></i>
 	                    	</div>
+	                    	<div class="invalid-feedback inv-sign-cursocan" >
+          						Curso del aspirante obligatorio.</div>
 	                    </div>
 	                    
 	                   		</div>
@@ -107,55 +106,100 @@ session_start();
 		                    		Para el año:
 		                    	</label>
 		                    	<div class="form-holder">
-		                    		<select name="" id="" class="form-control" required>
-										<option value="canvas" class="option">2020</option>
+		                    		<select name='anovigente' id='anovigente' class="form-control" required>
+										 <option value='<?php echo $anoFutura;?>'><?php echo $anoFutura;?></option>
 									</select>
 									<i class="zmdi zmdi-caret-down"></i>
 		                    	</div>
+		                    	<div class="invalid-feedback inv-sign-anovigente">
+          						Año de inscripción obligatorio.</div>
 	                    </div>
 
 	                   		</div>
 
 	                   	</div>	
-	                    	<div class="form-row">
+
+
+	                   	 
+
+
+						<div class="row mb-4">
+	                   	 	<div class="col-md-6">
+	                   	 		<div class="form-row">
 	                    		<label for="">
 	                    		Nombres del candidato:
 	                    		</label>
 	                    		<div class="form-holder">
-	                    			<input type="text" class="form-control" required>
+	                    			<input type="text" class="form-control" name="nombrecan" id="nombrecan" type="text" placeholder="1. Nombres del candidato *" required>
 	                    		</div>
+	                    		<div class="invalid-feedback inv-sign-nombrecan">
+          						Campo obligatorio.</div>
 	                    	</div>
-	                    	<div class="form-row">
-	                    		<label for="">
-	                    		Apellidos del candidato:
-	                    		</label>
-	                    		<div class="form-holder">
-	                    			<input type="text" class="form-control" required>
+	                   	 	</div>
+		                   	<div class="col-md-6">
+		                   		<div class="form-row">
+		                    		<label for="">
+		                    		Apellidos del candidato:
+		                    		</label>
+		                    		<div class="form-holder">
+		                    			<input type="text" class="form-control" name="apellidocan" id="apellidocan" placeholder="1. Apellidos del candidato *" required>
+		                    		</div>
+		                    		<div class="invalid-feedback inv-sign-apellidocan">
+		                    		Campo obligatorio.</div>
 	                    		</div>
-	                    	</div>
-	                    	<div class="form-row">
-	                    		<label for="">
-	                    		Lugar de nacimiento:
-	                    		</label>
-	                    		<div class="form-holder">
-	                    			<input type="text" class="form-control" required>
+		                   	</div>
+
+	                   	</div>
+
+	                   	<div class="row mb-4">
+	                   	 	<div class="col-md-6">
+	                   	 		<div class="form-row">
+		                    		<label for="">
+		                    		Lugar de nacimiento:
+		                    		</label>
+		                    		<div class="form-holder">
+		                    			<input type="text" class="form-control" placeholder="Lugar de nacimiento" name="lugarcan" id='lugarcan' required>
+		                    		</div>
+		                    		<div class="invalid-feedback inv-sign-lugarcan">
+          						Campo obligatorio.</div>
 	                    		</div>
-	                    	</div>
-	                    	<div class="form-row">
+	                   	 	</div>
+		                   	<div class="col-md-6">
+		                   		<div class="form-row">
+			                    	<label for="">
+			                    		Fecha de nacimiento:
+			                    	</label>
+			                    	<div class="form-holder">
+			                    		<input type="text" class="form-control datepicker-here" data-language='sp' data-date-format="yyyy - mm - dd" name="fechacan" id='fechacan'>
+			                    	</div>
+			                    	<div class="invalid-feedback inv-sign-fechacan">
+          						Fecha obligatoria.</div>
+	                    	</div>	
+
+		                   	</div>
+
+	                   	</div>
+	                    	
+	                    	  	<div class="row mb-4">
+	                   	 	<div class="col-md-6">
+	                   	 		<div class="form-row">
 		                    	<label for="">
-		                    		Fecha de nacimiento:
+		                    		Años (al próximo 31 de Diciembre)
 		                    	</label>
 		                    	<div class="form-holder">
-		                    		<input type="text" class="form-control datepicker-here" data-language='sp' data-date-format="yyyy - mm - dd" id="dp1">
+		                    		<input type="number" class="form-control datepicker-here" placeholder="" name="edadproximacan" id='edadproximacan'>
 		                    	</div>
+		                    	<div class="invalid-feedback inv-sign-edadproximacan">
+          						Campo obligatorio.</div>
 	                    	</div>	
-	                    
-	                    <div class="form-row">
+	                   	 	</div>
+		                   	<div class="col-md-6">
+		                   		<div class="form-row">
 	                    	<label for="">
 	                    		Edad:
 	                    	</label>
 	                    	<div class="form-holder">
-	                    		<select name="" id="" class="form-control">
+	                    		<select name="edadcan" id='edadcan' class="form-control">
 									<option value="4" class="option">4</option>
 									<option value="5" class="option">5</option>
 									<option value="6" class="option">6</option>
@@ -167,240 +211,350 @@ session_start();
 								</select>
 								<i class="zmdi zmdi-caret-down"></i>
 	                    	</div>
+	                    	<div class="invalid-feedback inv-sign-edadcan">
+          						Edad obligatoria.</div>
 	                    </div>	
+		                   	</div>
+
+	                   	</div>
 	                    
-	                    <div class="form-row">
-	                    	<label for="">
-	                    		Años (al próximo 31 de Diciembre):
-	                    	</label>
-	                    	<div class="form-holder">
-	                    		<input type="text" class="form-control" required>
-	                    	</div>
-	                    </div>		
+	                    
+	                    		
 	                </section>
 	                
 					<!-- SECTION 2 -->
 	                <h4></h4>
 	                <section>
 	                	<h3>DATOS DEL PADRE</h3>
-	                	<div class="form-row">
-	                    	<label for="">
-	                    		Nombres del padre:
-	                    	</label>
-	                    	<div class="form-holder">
-	                    		<input type="text" class="form-control">
-	                    	</div>
-	                    </div>
-	                    <div class="form-row">
-	                    	<label for="">
-	                    		Apellidos del padre:
-	                    	</label>
-	                    	<div class="form-holder">
-	                    		<input type="text" class="form-control">
-	                    	</div>
-	                    </div>
-	                    <div class="form-row">
-	                    	<label for="">
-	                    		Número de cédula:
-	                    	</label>
-	                    	<div class="form-holder">
-	                    		<input type="text" class="form-control">
-	                    	</div>
-	                    </div>
-	                    <div class="form-row">
+
+	                	<div class="row mb-4">
+	                		<div class="col-md-6">
+	                			<div class="form-row">
+			                    	<label for="">
+			                    		Nombres del padre:
+			                    	</label>
+			                    	<div class="form-holder">
+			                    		<input type="text" class="form-control" placeholder="Nombres del padre"  name="nombrepadre" id="nombrepadre" required>
+			                    	</div>
+			                    	<div class="invalid-feedback inv-sign-nombrepadre">
+          						Campo obligatorio.</div>
+	                    	 	</div>
+	                		</div>
+	                		<div class="col-md-6">
+	                			<div class="form-row">
+			                    	<label for="">
+			                    		Apellidos del padre:
+			                    	</label>
+			                    	<div class="form-holder">
+			                    		<input type="text" class="form-control" placeholder="Apellidos del padre" name="apellidopadre" id='apellidopadre' required>
+			                    	</div>
+			                    	<div class="invalid-feedback inv-sign-apellidopadre">
+          						campo obligatorio.</div>
+	                    		</div>
+	                		</div>
+	                	</div>
+
+	                	<div class="row mb-4">
+	                		<div class="col-md-6">
+	                			<div class="form-row">
+			                    	<label for="">
+			                    		Número de cédula:
+			                    	</label>
+			                    	<div class="form-holder">
+			                    		<input type="text" class="form-control" name="ccpadre" id='ccpadre' placeholder="CC. No." required>
+			                    	</div>
+			                    	<div class="invalid-feedback inv-sign-ccpadre">
+          						Campo obligatorio.</div>
+	                    		</div>
+	                		</div>
+	                		<div class="col-md-6">
+	                			<div class="form-row">
 	                    	<label for="">
 	                    		Profesion:
 	                    	</label>
 	                    	<div class="form-holder">
-	                    		<input type="text" class="form-control">
+	                    		<input type="text" placeholder="Profesión" name="profesionpadre" id='profesionpadre' class="form-control" required>
 	                    	</div>
+	                    	<div class="invalid-feedback inv-sign-profesionpadre">
+          						Campo obligatorio.</div>
 	                    </div>
-	                    <div class="form-row">
+	                		</div>
+	                	</div>
+	                	<div class="row mb-4">
+	                		
+	                		<div class="col-md-6">
+	                			<div class="form-row">
 	                    	<label for="">
 	                    		Dirección de Domicilio:
 	                    	</label>
 	                    	<div class="form-holder">
-	                    		<input type="text" class="form-control">
+	                    		<input type="text" placeholder="Dirección de domicilio" name="dirpadre" id='dirpadre' class="form-control" required>
 	                    	</div>
+	                    	<div class="invalid-feedback inv-sign-dirpadre">
+          						Campo obligatorio.</div>
 	                    </div>
-	                    <div class="form-row">
-	                    	<label for="">
-	                    		Teléfono:
-	                    	</label>
-	                    	<div class="form-holder">
-	                    		<input type="text" class="form-control">
-	                    	</div>
-	                    </div>	
-	                    <div class="form-row">
-	                    	<label for="">
-	                    		Dirección de oficina:
-	                    	</label>
-	                    	<div class="form-holder">
-	                    		<input type="text" class="form-control">
-	                    	</div>
-	                    </div>
-	                    <div class="form-row">
+	                		</div>
+	                		<div class="col-md-6">
+	                			<div class="form-row">
+			                    	<label for="">
+			                    		Teléfono:
+			                    	</label>
+			                    	<div class="form-holder">
+			                    		<input name="telpadre" id='telpadre' placeholder="ej. 3168669379 o 32395421" type="text" class="form-control" required>
+			                    	</div>
+			                    	<div class="invalid-feedback inv-sign-telpadre">
+          						Campo obligatorio.</div>
+	                    		</div>	
+	                		</div>
+	                	</div>
+	                	<div class="row mb-4">
+	                		
+	                		<div class="col-md-6">
+	                			<div class="form-row">
+			                    	<label for="">
+			                    		Dirección de oficina:
+			                    	</label>
+			                    	<div class="form-holder">
+			                    		<input name="direofipadre" id='direofipadre'  type="text" class="form-control" required>
+			                    	</div>
+			                    	<div class="invalid-feedback inv-sign-direofipadre">
+          						Campo obligatorio.</div>
+	                    		</div>
+	                		</div>
+	                		<div class="col-md-6">
+	                			<div class="form-row">
 	                    	<label for="">
 	                    		Teléfono de oficina:
 	                    	</label>
 	                    	<div class="form-holder">
-	                    		<input type="text" class="form-control">
+	                    		<input name="teleofipadre" id='teleofipadre' type="text" placeholder="Ej. 13524852 ext 1" class="form-control" required>
 	                    	</div>
+	                    	<div class="invalid-feedback inv-sign-teleofipadre">
+          						Campo obligatorio.</div>
 	                    </div>
+	                		</div>
+	                	</div>
+	                
+	                    
+	                    
 	                </section>
 
-	                <!-- SECTION 3
-
-	                    <div class="form-row" style="margin-bottom: 50px;">
-	                    	<label for="">
-	                    		Gender:
-	                    	</label>
-	                    	<div class="form-holder">
-	                    		<div class="checkbox-circle">
-									<label class="male">
-										<input type="radio" name="gender" value="male" checked> Male<br>
-										<span class="checkmark"></span>
-									</label>
-									<label class="female">
-										<input type="radio" name="gender" value="female"> Female<br>
-										<span class="checkmark"></span>
-									</label>
-									<label>
-										<input type="radio" name="gender" value="transgender">Transgender<br>
-										<span class="checkmark"></span>
-									</label>
-								</div>
-	                    	</div>
-	                    </div>	 -->
+	                <!-- SECTION 3 -->
 					<h4></h4>
 	                <section>
 	                	<h3>DATOS DE LA MADRE</h3>
-	                	<div class="form-row">
+
+
+	                		<div class="row mb-4">
+	                		<div class="col-md-6">
+	                			<div class="form-row">
 	                    	<label for="">
-	                    		Nombres del padre:
+	                    		Nombres de la madre:
 	                    	</label>
 	                    	<div class="form-holder">
-	                    		<input type="text" class="form-control">
+	                    		<input type="text" name="nombremadre" id="nombremadre" class="form-control">
 	                    	</div>
+	                    	<div class="invalid-feedback inv-sign-nombremadre">
+          						Campo obligatorio.</div>
 	                    </div>
-	                    <div class="form-row">
+	                		</div>
+	                		<div class="col-md-6">
+	                			<div class="form-row">
 	                    	<label for="">
-	                    		Apellidos del padre:
+	                    		Apellidos de la madre:
 	                    	</label>
 	                    	<div class="form-holder">
-	                    		<input type="text" class="form-control">
+	                    		<input name="apellidomadre" id='apellidomadre' type="text" class="form-control">
 	                    	</div>
+	                    	<div class="invalid-feedback inv-sign-apellidomadre">
+          						Campo obligatorio.</div>
 	                    </div>
-	                    <div class="form-row">
+	                		</div>
+	                	</div>
+	                	<div class="row mb-4">
+	                		<div class="col-md-6">
+	                			<div class="form-row">
 	                    	<label for="">
 	                    		Número de cédula:
 	                    	</label>
 	                    	<div class="form-holder">
-	                    		<input type="text" class="form-control">
+	                    		<input name="ccmadre" id='ccmadre' type="text"  class="form-control">
 	                    	</div>
+	                    	<div class="invalid-feedback inv-sign-ccmadre">
+          						Campo obligatorio.</div>
 	                    </div>
-	                    <div class="form-row">
+	                    
+	                		</div>
+	                		<div class="col-md-6">
+	                			<div class="form-row">
 	                    	<label for="">
 	                    		Profesion:
 	                    	</label>
 	                    	<div class="form-holder">
-	                    		<input type="text" class="form-control">
+	                    		<input name="profesionmadre" id='profesionmadre'  type="text" class="form-control">
 	                    	</div>
+	                    	<div class="invalid-feedback inv-sign-profesionmadre">
+          						Campo obligatorio.</div>
 	                    </div>
+	                		</div>
+	                	</div>
+	                	<div class="row mb-4">
+	                		<div class="col-md-6">
+	                			
 	                    <div class="form-row">
 	                    	<label for="">
 	                    		Dirección de Domicilio:
 	                    	</label>
 	                    	<div class="form-holder">
-	                    		<input type="text" class="form-control">
+	                    		<input name="dirmadre" id='dirmadre' type="text" class="form-control">
 	                    	</div>
+	                    	<div class="invalid-feedback inv-sign-dirmadre">
+          						Campo obligatorio.</div>
 	                    </div>
-	                    <div class="form-row">
+	                    
+	                		</div>
+	                		<div class="col-md-6">
+	                			<div class="form-row">
 	                    	<label for="">
 	                    		Teléfono:
 	                    	</label>
 	                    	<div class="form-holder">
-	                    		<input type="text" class="form-control">
+	                    		<input name="telmadre" id='telmadre' placeholder="Ej 3152388431 o 314565 ext 1" type="text" class="form-control">
 	                    	</div>
+	                    	<div class="invalid-feedback inv-sign-telmadre">
+          						Campo obligatorio.</div>
 	                    </div>	
-	                    <div class="form-row">
+	                		</div>
+	                	</div><div class="row mb-4">
+	                		<div class="col-md-6">
+	                			<div class="form-row">
 	                    	<label for="">
 	                    		Dirección de oficina:
 	                    	</label>
 	                    	<div class="form-holder">
-	                    		<input type="text" class="form-control">
+	                    		<input name="direofimadre" id='direofimadre' type="text" class="form-control">
 	                    	</div>
+	                    	<div class="invalid-feedback inv-sign-direofimadre">
+          						Campo obligatorio.</div>
 	                    </div>
-	                    <div class="form-row">
-	                    	<label for="">
-	                    		Teléfono de oficina:
-	                    	</label>
-	                    	<div class="form-holder">
-	                    		<input type="text" class="form-control">
+	                    
+	                		</div>
+	                		<div class="col-md-6">
+	                		<div class="form-row">
+		                    	<label for="">
+		                    		Teléfono de oficina:
+		                    	</label>
+		                    	<div class="form-holder">
+		                    		<input name="teleofimadre" id='teleofimadre' placeholder="Ej. 3975285 ext 342" type="text" class="form-control">
+		                    	</div>
+		                    	<div class="invalid-feedback inv-sign-teleofimadre">
+          						Campo obligatorio.</div>
 	                    	</div>
-	                    </div>
+	                		</div>
+	                	</div>
+	                	
+	                    
+	                    
+	                    
 	                	
 	                </section>
 	                <!-- SECTION 4 -->
 	               <h4></h4>
 	                <section>
 	                	<h3>REFERENCIAS</h3>
-	                	<h4>25. PRIMER PERSONA DE REFERENCIA CONOCIDA DEL COLEGIO (o particular)</h4>
-	                	<div class="form-row">
-	                    	<label for="">
-	                    		Nombres:
-	                    	</label>
-	                    	<div class="form-holder">
-	                    		<input type="text" class="form-control">
-	                    	</div>
-	                    </div>
-	                    <div class="form-row">
+	                	<h4>25. REFERENCIA PERSONAL</h4>
+	                	<div class="row mb-4">
+	                		<div class="col-md-6">
+	                			<div class="form-row">
+		                    	<label for="">
+		                    		Nombres:
+		                    	</label>
+		                    	<div class="form-holder">
+		                    		<input name="nombrerefeu" id='nombrerefeu'type="text" class="form-control">
+		                    	</div>
+		                    	<div class="invalid-feedback inv-sign-nombrerefeu">
+          						Campo obligatorio.</div>
+	                    		</div>
+	                		</div>
+	                		<div class="col-md-6">
+	                			<div class="form-row">
 	                    	<label for="">
 	                    		Apellidos:
 	                    	</label>
 	                    	<div class="form-holder">
-	                    		<input type="text" class="form-control">
+	                    		<input name="apellidorefeu" id='apellidorefeu' type="text" class="form-control">
 	                    	</div>
+	                    	<div class="invalid-feedback inv-sign-apellidorefue">
+          						Campo obligatorio.</div>
 	                    </div>
-	                    <div class="form-row">
+
+	                		</div>
+	                	</div><div class="row mb-4">
+	                		<div class="col-md-6">
+	                			  <div class="form-row">
 	                    	<label for="">
 	                    		Profesion:
 	                    	</label>
 	                    	<div class="form-holder">
-	                    		<input type="text" class="form-control">
+	                    		<input name="profesionrefeu" id='profesionrefeu' type="text" class="form-control">
 	                    	</div>
+	                    	<div class="invalid-feedback inv-sign-profesionrefeu">
+          						Campo obligatorio.</div>
 	                    </div>
-	                    <div class="form-row">
+	                		</div>
+	                		<div class="col-md-6">
+	                			<div class="form-row">
 	                    	<label for="">
 	                    		Dirección:
 	                    	</label>
 	                    	<div class="form-holder">
-	                    		<input type="text" class="form-control">
+	                    		<input name="direrefeu" id='direrefeu' type="text" class="form-control">
 	                    	</div>
+	                    	<div class="invalid-feedback inv-sign-direrefeu">
+          						Campo obligatorio.</div>
 	                    </div>
-	                    <div class="form-row">
+	                		</div>
+	                	</div>
+
+	                	<div class="row mb-4">
+	                		<div class="col-md-6">
+	                			<div class="form-row">
 	                    	<label for="">
 	                    		Teléfono Domicilio:
 	                    	</label>
 	                    	<div class="form-holder">
-	                    		<input type="text" class="form-control">
+	                    		<input name="telerefeu" id='telerefeu' type="text" placeholder="Ej. 3168669379 o 4561234" class="form-control">
 	                    	</div>
+	                    	<div class="invalid-feedback inv-sign-telerefeu">
+          						Campo obligatorio.</div>
 	                    </div>
-	                    <div class="form-row">
+	                		</div>
+	                		<div class="col-md-6">
+	                			<div class="form-row">
 	                    	<label for="">
 	                    		Teléfono de oficina:
 	                    	</label>
 	                    	<div class="form-holder">
-	                    		<input type="text" class="form-control">
+	                    		<input name="teleofirefeu" id='teleofirefeu' placeholder="Ej. 6754567 ext. 541" type="text" class="form-control">
 	                    	</div>
+	                    	<div class="invalid-feedback inv-sign-teleofirefeu">
+          						Campo obligatorio.</div>
 	                    </div>
+	                		</div>
+	                	</div>
+
+
+	                    
+	                    
 	                    <div class="form-row">
 	                    	<label for="">
 	                    		Naturaleza de las relaciones:
 	                    	</label>
 	                    	<div class="form-holder">
-	                    		<input type="text" class="form-control">
+	                    		<input name="vinculorefeu" id='vinculorefeu' type="text" class="form-control">
 	                    	</div>
+	                    	<div class="invalid-feedback inv-sign-vinculorefeu">
+          						Campo obligatorio.</div>
 	                    </div>
 	                </section>
 
@@ -409,61 +563,83 @@ session_start();
 					<h4></h4>
 	                <section>
 	                	<h3>REFERENCIAS</h3>
-	                	<h4>26. SEGUNDA PERSONA DE REFERENCIA CONOCIDA DEL COLEGIO (o particular)</h4>
-	                	<div class="form-row">
+	                	<h4>26. REFERENCIA DEL COLEGIO</h4>
+
+	                	<div class="row mb-4">
+	                		<div class="col-md-6">
+	                			<div class="form-row">
 	                    	<label for="">
 	                    		Nombres:
 	                    	</label>
 	                    	<div class="form-holder">
-	                    		<input type="text" class="form-control">
+	                    		<input name="nombrerefed" id='nombrerefed' type="text" class="form-control">
 	                    	</div>
 	                    </div>
-	                    <div class="form-row">
+	                		</div>
+	                		<div class="col-md-6">
+	                			<div class="form-row">
 	                    	<label for="">
 	                    		Apellidos:
 	                    	</label>
 	                    	<div class="form-holder">
-	                    		<input type="text" class="form-control">
+	                    		<input name="apellidorefed" id='apellidorefed' type="text" class="form-control">
 	                    	</div>
 	                    </div>
-	                    <div class="form-row">
+	                		</div>
+	                	</div>
+
+	                	<div class="row mb-4">
+	                		<div class="col-md-6">
+	                			<div class="form-row">
 	                    	<label for="">
 	                    		Profesion:
 	                    	</label>
 	                    	<div class="form-holder">
-	                    		<input type="text" class="form-control">
+	                    		<input name="profesionrefed" id='profesionrefed' type="text" class="form-control">
 	                    	</div>
 	                    </div>
-	                    <div class="form-row">
+	                		</div>
+	                		<div class="col-md-6">
+	                			<div class="form-row">
 	                    	<label for="">
 	                    		Dirección:
 	                    	</label>
 	                    	<div class="form-holder">
-	                    		<input type="text" class="form-control">
+	                    		<input name="direrefed" id='direrefed' type="text" class="form-control">
 	                    	</div>
 	                    </div>
-	                    <div class="form-row">
+	                		</div>
+	                	</div>
+
+	                	<div class="row mb-4">
+	                		<div class="col-md-6">
+	                			<div class="form-row">
 	                    	<label for="">
 	                    		Teléfono Domicilio:
 	                    	</label>
 	                    	<div class="form-holder">
-	                    		<input type="text" class="form-control">
+	                    		<input name="direrefed" id='direrefed' type="text" placeholder="Ej. 2657535 ext. 3" class="form-control">
 	                    	</div>
 	                    </div>
-	                    <div class="form-row">
+	                		</div>
+	                		<div class="col-md-6">
+	                			<div class="form-row">
 	                    	<label for="">
 	                    		Teléfono de oficina:
 	                    	</label>
 	                    	<div class="form-holder">
-	                    		<input type="text" class="form-control">
+	                    		<input name="teleofirefed" id='teleofirefed' placeholder="Ej. 6754567 ext. 541" type="text" class="form-control">
 	                    	</div>
 	                    </div>
+	                		</div>
+	                	</div>
+
 	                    <div class="form-row">
 	                    	<label for="">
 	                    		Naturaleza de las relaciones:
 	                    	</label>
 	                    	<div class="form-holder">
-	                    		<input type="text" class="form-control">
+	                    		<input name="vinculorefed" id='vinculorefed' type="text" class="form-control">
 	                    	</div>
 	                    </div>
 	                </section>
@@ -479,7 +655,9 @@ session_start();
 	                    		email:
 	                    	</label>
 	                    	<div class="form-holder">
-	                    		<input type="email" class="form-control">
+	                    		<input type="email" name="buyerEmail" id='buyerEmail' class="form-control">
+	                    		<div class="invalid-feedback inv-sign-buyerEmail">
+          						Campo obligatorio.</div>
 	                    	</div>
 	                    </div>
 	                </section>
@@ -488,49 +666,382 @@ session_start();
 
 	                <h4></h4>
 	                <section>
-	                    <div class="form-row">
+
+	                	
+
+	                	<h3>
+	                		LISTA DE HERMANOS DEL CANDIDATO 
+	                	</h3>
+
+	                	<h4>Hermano número 1</h4>
+	                	
+	                    	     
+	                    <div class="row mb-4">
+	                		<div class="col-md-6">
+	                			<div class="form-row">
 	                    	<label for="">
-	                    		Course ID:
+	                    		Nombres
 	                    	</label>
 	                    	<div class="form-holder">
-	                    		<input type="text" class="form-control" placeholder="Ex. abc 12345 or abc 1234L">
+	                    		<input name="nombreherma" id='nombreherma' type="text" class="form-control" >
 	                    	</div>
-	                    </div>	
-	                    <div class="form-row">
+	                    </div>
+	                		</div>
+	                		<div class="col-md-6">
+	                			<div class="form-row">
 	                    	<label for="">
-	                    		Course Title:
+	                    		Apellido
 	                    	</label>
 	                    	<div class="form-holder">
-	                    		<input type="text" class="form-control" placeholder="Ex. Intro to physic">
+	                    		<input name="apellidoherma" id='apellidoherma' type="text" class="form-control">
 	                    	</div>
-	                    </div>	
-                     	<div class="form-row">
+	                    </div>
+	                		</div>
+	                	</div>
+
+	                	<div class="row mb-4">
+	                		<div class="col-md-4">
+	                			<div class="form-row">
 	                    	<label for="">
-	                    		Section(s):
+	                    		Edad:
 	                    	</label>
 	                    	<div class="form-holder">
-	                    		<input type="text" class="form-control" placeholder="Ex. 3679 or 33fa, 4295">
-	                    	</div>
-	                    </div>	
-	                    <div class="form-row" style="margin-bottom: 38px">
-	                    	<label for="">
-	                    		Select Teacher:
-	                    	</label>
-	                    	<div class="form-holder">
-	                    		<select name="" id="" class="form-control">
+	                    		<select name="edadherma" id="edadherma" class="form-control">
 	                    			<option value="frances meyer" class="option">Frances Meyer</option>
 									<option value="johan lucas" class="option">Johan Lucas</option>
 									<option value="merry linn" class="option">Merry Linn</option>
 								</select>
 								<i class="zmdi zmdi-caret-down"></i>
 	                    	</div>
+	                    	
 	                    </div>	
-	                    <div class="checkbox-circle" style="margin-bottom: 48px;">
-							<label>
-								<input type="checkbox" checked>I agree all statement in Terms & Conditions
-								<span class="checkmark"></span>
-							</label>
-						</div>
+	                		</div>
+	                		<div class="col-md-8">
+	                			<div class="form-row">
+	                    	<label for="">
+	                    		Colegio en el Cual estudia
+	                    	</label>
+	                    	<div class="form-holder">
+	                    		<input name="colegioherma" id="colegioherma" type="text" class="form-control" >
+	                    	</div>
+	                    </div>
+	                		</div>
+	                	</div>
+	                    	
+	                    	</section>
+	                    
+
+
+<!-- SECTION 8 -->
+
+	                <h4></h4>
+	                <section>
+
+	                	
+
+	                	<h3>
+	                		LISTA DE HERMANOS DEL CANDIDATO 
+	                	</h3>
+
+	                	<h4>Hermano número 2</h4>
+	                	
+	                    	     
+	                    <div class="row mb-4">
+	                		<div class="col-md-6">
+	                			<div class="form-row">
+	                    	<label for="">
+	                    		Nombres
+	                    	</label>
+	                    	<div class="form-holder">
+	                    		<input name="nombrehermad" id='nombrehermad' type="text" class="form-control">
+	                    	</div>
+	                    </div>
+	                		</div>
+	                		<div class="col-md-6">
+	                			<div class="form-row">
+	                    	<label for="">
+	                    		Apellido
+	                    	</label>
+	                    	<div class="form-holder">
+	                    		<input name="apellidohermad" id='apellidohermad' type="text" class="form-control" >
+	                    	</div>
+	                    </div>
+	                		</div>
+	                	</div>
+
+	                	<div class="row mb-4">
+	                		<div class="col-md-4">
+	                			<div class="form-row">
+	                    	<label for="">
+	                    		Edad:
+	                    	</label>
+	                    	<div class="form-holder">
+	                    		<select name="edadhermad" id="edadhermad" class="form-control">
+	                    			<option value="frances meyer" class="option">Frances Meyer</option>
+									<option value="johan lucas" class="option">Johan Lucas</option>
+									<option value="merry linn" class="option">Merry Linn</option>
+								</select>
+								<i class="zmdi zmdi-caret-down"></i>
+	                    	</div>
+	                    	
+	                    </div>	
+	                		</div>
+	                		<div class="col-md-8">
+	                			<div class="form-row">
+	                    	<label for="">
+	                    		Colegio en el Cual estudia
+	                    	</label>
+	                    	<div class="form-holder">
+	                    		<input name="colegiohermad" id="colegiohermad" type="text" class="form-control">
+	                    	</div>
+	                    </div>
+	                		</div>
+	                	</div>
+	                    	
+	                    	</section>
+
+
+	                    	<!-- SECTION 8 -->
+
+	                <h4></h4>
+	                <section>
+
+	                	
+
+	                	<h3>
+	                		LISTA DE HERMANOS DEL CANDIDATO 
+	                	</h3>
+
+	                	<h4>Hermano número 3</h4>
+	                	
+	                    	     
+	                    <div class="row mb-4">
+	                		<div class="col-md-6">
+	                			<div class="form-row">
+	                    	<label for="">
+	                    		Nombres
+	                    	</label>
+	                    	<div class="form-holder">
+	                    		<input type="text" class="form-control" name="nombrehermat" id='nombrehermat'>
+	                    	</div>
+	                    </div>
+	                		</div>
+	                		<div class="col-md-6">
+	                			<div class="form-row">
+	                    	<label for="">
+	                    		Apellido
+	                    	</label>
+	                    	<div class="form-holder">
+	                    		<input name="apellidohermat" id='apellidohermat' type="text" class="form-control">
+	                    	</div>
+	                    </div>
+	                		</div>
+	                	</div>
+
+	                	<div class="row mb-4">
+	                		<div class="col-md-4">
+	                			<div class="form-row">
+	                    	<label for="">
+	                    		Edad:
+	                    	</label>
+	                    	<div class="form-holder">
+	                    		<select name="edadhermat" id="edadhermat" class="form-control">
+	                    			<option value="frances meyer" class="option">Frances Meyer</option>
+									<option value="johan lucas" class="option">Johan Lucas</option>
+									<option value="merry linn" class="option">Merry Linn</option>
+								</select>
+								<i class="zmdi zmdi-caret-down"></i>
+	                    	</div>
+	                    	
+	                    </div>	
+	                		</div>
+	                		<div class="col-md-8">
+	                			<div class="form-row">
+	                    	<label for="">
+	                    		Colegio en el Cual estudia
+	                    	</label>
+	                    	<div class="form-holder">
+	                    		<input name="colegiohermat" id="colegiohermat" type="text" class="form-control" placeholder="Ex. abc 12345 or abc 1234L">
+	                    	</div>
+	                    </div>
+	                		</div>
+	                	</div>
+	                    	
+	                    	</section>
+
+
+	                    	<!-- SECTION 9 -->
+
+	                <h4></h4>
+	                <section>
+
+	                	
+
+	                	<h3>
+	                		LISTA DE HERMANOS DEL CANDIDATO 
+	                	</h3>
+
+	                	<h4>Hermano número 4</h4>
+	                	
+	                    	     
+	                    <div class="row mb-4">
+	                		<div class="col-md-6">
+	                			<div class="form-row">
+	                    	<label for="">
+	                    		Nombres
+	                    	</label>
+	                    	<div class="form-holder">
+	                    		<input type="text" class="form-control" name="nombrehermac" id='nombrehermac'>
+	                    	</div>
+	                    </div>
+	                		</div>
+	                		<div class="col-md-6">
+	                			<div class="form-row">
+	                    	<label for="">
+	                    		Apellido
+	                    	</label>
+	                    	<div class="form-holder">
+	                    		<input  name="apellidohermac" id='apellidohermac' type="text" class="form-control" placeholder="Ex. abc 12345 or abc 1234L">
+	                    	</div>
+	                    </div>
+	                		</div>
+	                	</div>
+
+	                	<div class="row mb-4">
+	                		<div class="col-md-4">
+	                			<div class="form-row">
+	                    	<label for="">
+	                    		Edad:
+	                    	</label>
+	                    	<div class="form-holder">
+	                    		<select name="edadhermac" id="edadhermac" class="form-control">
+	                    			<option value="frances meyer" class="option">Frances Meyer</option>
+									<option value="johan lucas" class="option">Johan Lucas</option>
+									<option value="merry linn" class="option">Merry Linn</option>
+								</select>
+								<i class="zmdi zmdi-caret-down"></i>
+	                    	</div>
+	                    	
+	                    </div>	
+	                		</div>
+	                		<div class="col-md-8">
+	                			<div class="form-row">
+	                    	<label for="">
+	                    		Colegio en el Cual estudia
+	                    	</label>
+	                    	<div class="form-holder">
+	                    		<input name="colegiohermac" id="colegiohermac" type="text" class="form-control">
+	                    	</div>
+	                    </div>
+	                		</div>
+	                	</div>
+	                    	
+	                    	</section>
+
+
+	                    	<!-- SECTION 10 -->
+
+	                <h4></h4>
+	                <section>
+
+	                	
+
+	                	<h3>
+	                		Los padres se han enterado del reglamento del Colegio al presentar esta solicitud. 
+	                	</h3>
+	                	
+	                    	 <div class="form-row" style="margin-bottom: 50px;">
+	                    	
+	                    	<div class="form-holder">
+	                    		<div class="checkbox-circle">
+									<label class="male">
+										<input type="radio" name="terminos" id='terminos' value="SI" checked> SI<br>
+										<span class="checkmark"></span>
+									</label>
+									<label class="female">
+										<input type="radio" name="terminos" id='terminos' value="NO"> NO<br>
+										<span class="checkmark"></span>
+									</label>
+								</div>
+								<div class="invalid-feedback inv-sign-terminos">
+          						Selecciona una de las 2 opciones (Campo obligatorio).</div>
+								<p>
+									(El recibo de la presente solicitud no implica compromiso de ninguna clase, ni de parte del solicitante, ni de la institución.)
+								</p>
+	                    	</div>
+	                    </div>
+	                    	
+	                    	</section>
+
+<h4></h4>
+	                    		                <section>
+
+	                	
+
+	                	<h3>
+	                		ACEPTACIÓN DE TRATAMIENTO DE DATOS 
+	                	</h3>
+	                	
+	                    	 <div class="form-row" style="margin-bottom: 50px;">
+	                    	
+	                    	<div class="form-holder">
+	                    		<div class="checkbox-circle">
+									<label class="male">
+										<input type="radio" value="SI" id="legal" name="legal"> 
+										Autorizo al COLEGIO REFOUS, con domicilio en el Km 4.7 Vía Siberia - Cota, Vereda Rozo y con números de contacto (57) (1) 518 5566 a: recolectar, almacenar, usar, circular y/o suprimir mis datos personales y los de: el menor de edad que represento legalmente, (en adelante el "Tratamiento"), de conformidad con las siguientes finalidades:
+										<span class="checkmark"></span>
+									</label>
+								</div>
+								<div class="invalid-feedback inv-sign-legal">
+          						Acepte el tratamiento de datos para enviar la solicitud.</div>
+	                    	</div>
+
+
+
+	                    	<div class="form-holder">
+	                    		<div class="legal-box">
+                                                <ol>
+                                                    <li>
+                                                        <h6>Finalidades del Tratamiento de los Datos Personales del representante legal del menor:</h6>
+                                                        <ul>
+                                                            <li>Envío de comunicaciones y contacto con el fin de brindar información sobre el prroceso de admisión, llamado a entrevistas y solicitar información adicional necesaria para evaluar su solicitud.</li>
+                                                            <li>Comunicar decisiones sobre el proceso de admisión</li>
+                                                            <li>Hacer seguimiento al proceso de los candidatos.</li>
+                                                            <li>Citación a entrevistas</li>
+                                                            <li>Conocer y verificar aplicaciones presentadas y resultado de las mismas.</li>
+                                                            <li>Identificar al personal que acceda a las instalaciones del COLEGIO REFOUS.</li>
+                                                            <li>Hacer uso de diversos medios de video vigilancia ("CCTV") en diferentes lugares de las instalaciones del COLEGIO REFOUS.</li>
+                                                        </ul>
+                                                    </li>
+
+                                                    <li>
+                                                        <h6>Finalidades del Tratamiento de los Datos Personales del menor de edad:</h6>
+                                                        <ul>
+                                                            <li>Conocer y verificar las aplicaciones presentadas y el resultado de las mismas.</li>
+                                                            <li>Analizar la respectiva admisión al COLEGIO REFOUS y el seguimiento académico que debe tener en caso de ser admitido.</li>
+                                                            <li>Definir si la admisión al COLEGIO REFOUS garantiza un adecuado proceso académico y su bienestar.</li>
+                                                            <li>Identificar al personal que acceda a las instalaciones del COLEGIO REFOUS.</li>
+                                                            <li>Hacer uso de diversos medios de video vigilacia en diferentes lugares de las instalaciones del COLEGIO REFOUS.</li>
+                                                        </ul>
+                                                    </li>
+                                                </ol>
+                                                <p>Declaro que tengo conocimiento que el COLEGIO REFOUS hace videovigilancia y que esta información es considerada por la regulación colombiana de protección de datos como datos de naturaleza sensible. La información recolectada a través del CCTV se utilizará para fines de seguridad de las personas, los bienes e instalaciones del COLEGIO REFOUS. Esta información puede ser empleada como prueba en cualquier tipo de proceso ante cualquier tipo de autoridad y organización.</p>
+                                                <p>Así mismo, declaro que la autorización para el tratamiento de los datos sensibles arriba mencionados es facultativa y puede ser revocada en cualquier momento, salvo si existe una obligación legal que le permita al COLEGIO REFOUS acceder y conservar la información.</p>
+                                                <p>Adicionalmente, manifiesto que conozco que me asisten los siguientes derechos:</p>
+                                                <ol>
+                                                    <li>Conocer, actualizar y rectificar los datos personales cuando identifique que hay datos aprciales, inexactos, incompletos, fraccionados, que induzcan a error</li>
+                                                    <li>Solicitar prueba de la autorización otorgada al COLEGIO REFOUS.</li>
+                                                    <li>Ser informado del uso que le es dado a sus datos personales.</li>
+                                                    <li>Presentar ante la Superintendencia de Industria y Comercio quejas por la infracción a las normas de protección de datos establecidas en la Ley 1581 de 2012, y las normas que la modifiquen, adicionen o complementen.</li>
+                                                    <li>Revocar la autorización otorgada y/o solicitar la supresión de su datos personales de la base de datos a la cual haya dado autorización, cuando no se respeten los principios, derechos, garantías constitucionales y legales en relación con el tratamiento de sus datos personales.</li>
+                                                    <li>Acceder en forma gratuita a sus datos personales.</li>
+                                                </ol>
+                                                <p>Declaro que tengo conocimiento que el COLEGIO REFOUS ha implementado la Política de Tratamiento de Datos Personales, y que dicha Política está disponible en las instalaciones del COLEGIO REFOUS para su consulta. </p>
+                                            </div>
+	                    	</div>
+	                    </div>
+	                    	
+	                    	
 
 
 						 <?php 
@@ -541,12 +1052,12 @@ session_start();
     $iva              = 0;
     $dateRef          = 'CFR-'.date('hisdmY');
     $refVenta         = $dateRef;
-    $llave_encripcion = '7BLF7vyoHcVjvSN6yVt7KHd1Lm';					
-    $usuarioId        = '628342'; //merchantId
+    $llave_encripcion = '4Vj8eK4rloUd272L48hsrarnUA';					
+    $usuarioId        = '508029'; //merchantId
 
 
     $descripcion      = 'Gracias por elegirnos COLEGIO REFOUS mayor información. Teléfono: (57) (1) 8763197, E-mail de contacto: info@refous.com';
-    $accountId        = '630651';					
+    $accountId        = '512321';					
     $valorRefe 	      = '60000';//'60000.00';
     $firma            = $llave_encripcion.'~'.$usuarioId.'~'.$refVenta.'~'.$valorRefe.'~'.$moneda;
     $firma_codificada = md5($firma);
@@ -585,13 +1096,11 @@ session_start();
     <!-- //confirmationUrl Url pagina de confirmación  -->
      <input name="confirmationUrl" id="confirmationUrl" type="hidden" value="https://colegiorefous.edu.co/confirmacion.php">
     <!-- //responseUrl Url pagina de respuesta   -->
-     <input name="responseUrl" id="responseUrl" type="hidden" value="https://colegiorefous.edu.co/respuesta.php">
+     <input name="responseUrl" id="responseUrl" type="hidden" value="https://127.0.0.1/refous-colegio/respuesta.php">
     <!-- //responseUrl Url pagina de respuesta   -->
      <input name="consecutivoFor" id="consecutivoFor" type="hidden" value="<?php echo $consecutivoA;?>">
-     
+     </section>
   
-	                </section>
-	                
             	</div>
             </form>
 		</div>

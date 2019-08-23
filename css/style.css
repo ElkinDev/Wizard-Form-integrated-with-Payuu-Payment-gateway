@@ -125,11 +125,11 @@ h4 {
     font-size: 20px;
     font-family: Material-Design-Iconic-Font;
     bottom: 20px;
-    left: 29.4%;
+    left: 5%;
     transition: all 0.5s ease; }
   .wizard > .steps ul:after {
     content: "";
-    width: 33.33%;
+    width: 8.33%;
     height: 12px;
     background: rgba(255, 255, 255, 0.8);
     border-radius: 6px;
@@ -138,44 +138,94 @@ h4 {
     left: 0;
     transition: all 0.5s ease; }
   .wizard > .steps ul.step-2:before {
-    left: 62.5%;
+    left: 13.66%;
     transition: all 0.5s ease; }
   .wizard > .steps ul.step-2:after {
-    width: 66.67%;
+    width: 16.66%;
     transition: all 0.5s ease; }
+
+
   .wizard > .steps ul.step-3:before {
-    left: 96%;
+    left: 21.66%;
     transition: all 0.5s ease; }
   .wizard > .steps ul.step-3:after {
-    width: 100%;
+    width: 24.99%;
     transition: all 0.5s ease; }
 
 
 
   .wizard > .steps ul.step-4:before {
-    left: 96%;
+    left: 29.99%;
     transition: all 0.5s ease; }
   .wizard > .steps ul.step-4:after {
-    width: 100%;
+    width: 33.32%;
     transition: all 0.5s ease; }
+
 
   .wizard > .steps ul.step-5:before {
-    left: 96%;
+    left: 38.2%;
     transition: all 0.5s ease; }
   .wizard > .steps ul.step-5:after {
-    width: 100%;
+    width: 41.65%;
     transition: all 0.5s ease; }
+
 
   .wizard > .steps ul.step-6:before {
-    left: 96%;
+    left: 46.65%;
     transition: all 0.5s ease; }
   .wizard > .steps ul.step-6:after {
-    width: 100%;
+    width: 49.98%;
+    transition: all 0.5s ease;
+  }
+
+
+
+
+  .wizard > .steps ul.step-7:before {
+    left: 54.98%;
+    transition: all 0.5s ease; }
+  .wizard > .steps ul.step-7:after {
+    width: 58.31%;
     transition: all 0.5s ease; }
 
+  .wizard > .steps ul.step-8:before {
+    left: 63.31%;
+    transition: all 0.5s ease; }
+  .wizard > .steps ul.step-8:after {
+    width: 66.64%;
+    transition: all 0.5s ease; }
 
+  .wizard > .steps ul.step-9:before {
+    left: 71.64%;
+    transition: all 0.5s ease; }
+  .wizard > .steps ul.step-9:after {
+    width: 74.97%;
+    transition: all 0.5s ease;
+    }
 
+    .wizard > .steps ul.step-10:before {
+      left: 79.97%;
+      transition: all 0.5s ease; }
+    .wizard > .steps ul.step-10:after {
+      width: 83.3%;
+      transition: all 0.5s ease;
+    }
 
+    .wizard > .steps ul.step-11:before {
+      left: 88.3%;
+      transition: all 0.5s ease; }
+    .wizard > .steps ul.step-11:after {
+      width: 91.63%;
+      transition: all 0.5s ease;
+    }
+
+    .wizard > .steps ul.step-12:before {
+      left: 96%;
+      transition: all 0.5s ease; }
+    .wizard > .steps ul.step-12:after {
+      width: 100%;
+      transition: all 0.5s ease;
+    }
 
 
 
@@ -296,6 +346,15 @@ textarea.form-control {
 .actions li:last-child a {
   width: 154px; }
 
+.legal-box {
+    overflow-y: scroll;
+    height: 200px;
+    text-align: justify;
+    border: 1px solid #f1f1f1;
+    border-right: 0;
+    padding: 20px;
+}
+
 @-webkit-keyframes hvr-icon-wobble-horizontal {
   16.65% {
     -webkit-transform: translateX(6px);
@@ -336,7 +395,7 @@ textarea.form-control {
     transform: translateX(0); } }
 .checkbox-circle {
   display: flex;
-  justify-content: space-between; }
+  justify-content: space-around; }
   .checkbox-circle label {
     cursor: pointer;
     display: inline-block;
