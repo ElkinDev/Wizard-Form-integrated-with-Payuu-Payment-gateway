@@ -1,4 +1,8 @@
 $(function(){
+    $(document).ready(function () {
+        $('#loadingView').css('display','none')
+        
+    })
 	$("#wizard").steps({
         headerTag: "h4",
         bodyTag: "section",
@@ -8,20 +12,112 @@ $(function(){
 
           onFinishing: function (event, currentIndex)
         {
+            $('#loadingView').css('display','flex');
+
             var form = $("#frmaccion");
-            form.submit();  
+            
+                
+
+
+            var anovigente = $('#anovigente').val();
+            var nombrecan = $('#nombrecan').val();
+            var apellidocan = $('#apellidocan').val();
+            var lugarcan = $('#lugarcan').val();
+            var fechacan = $('#fechacan').val();
+            var cursocan = $('#cursocan').val();
+            var edadcan = $('#edadcan').val();
+            var edadproximacan = $('#edadproximacan').val();
+            var nombrepadre = $('#nombrepadre').val();
+            var apellidopadre = $('#apellidopadre').val();
+            var profesionpadre = $('#profesionpadre').val();
+            var ccpadre = $('#ccpadre').val();
+            var dirpadre = $('#dirpadre').val();
+            var telpadre = $('#telpadre').val();
+            var direofipadre = $('#direofipadre').val();
+            var teleofipadre = $('#teleofipadre').val();
+            var nombremadre = $('#nombremadre').val();
+            var apellidomadre = $('#apellidomadre').val();
+            var profesionmadre = $('#profesionmadre').val();
+            var ccmadre = $('#ccmadre').val();
+            var dirmadre = $('#dirmadre').val();
+            var telmadre = $('#telmadre').val();
+            var direofimadre = $('#direofimadre').val();
+            var teleofimadre = $('#teleofimadre').val();
+            var nombrerefeu = $('#nombrerefeu').val();
+            var apellidorefeu = $('#apellidorefeu').val();
+            var profesionrefeu = $('#profesionrefeu').val();
+            var direrefeu = $('#direrefeu').val();
+            var teleofirefeu = $('#teleofirefeu').val();
+            var telerefeu = $('#telerefeu').val();
+            var vinculorefeu = $('#vinculorefeu').val();
+            var nombrerefed = $('#nombrerefed').val();
+            var apellidorefed = $('#apellidorefed').val();
+            var profesionrefed = $('#profesionrefed').val();
+            var direrefed = $('#direrefed').val();
+            var teleofirefed = $('#teleofirefed').val();
+            var telerefed = $('#telerefed').val();
+            var vinculorefed = $('#vinculorefed').val();
+            var nombreherma = $('#nombreherma').val();
+            var apellidoherma = $('#apellidoherma').val();
+            var edadherma = $('#edadherma').val();
+            var colegioherma = $('#colegioherma').val();
+            var nombrehermad = $('#nombrehermad').val();
+            var apellidohermad = $('#apellidohermad').val();
+            var edadhermad = $('#edadhermad').val();
+            var colegiohermad = $('#colegiohermad').val();
+            var nombrehermat = $('#nombrehermat').val();
+            var apellidohermat = $('#apellidohermat').val();
+            var edadhermat = $('#edadhermat').val();
+            var colegiohermat = $('#colegiohermat').val();
+            var nombrehermac = $('#nombrehermac').val();
+            var apellidohermac = $('#apellidohermac').val();
+            var edadhermac = $('#edadhermac').val();
+            var colegiohermac = $('#colegiohermac').val();
+            var padecimientocan = $('#padecimientocan').val();
+            var terminos = $('#terminos').val();
+            var legal = $('#legal').prop('checked');
+            var fechasolicita = $('#fechasolicita').val();
+            var consecutivoFor = $('#consecutivoFor').val();
+            var emailCan = $('#buyerEmail').val();
+            
+            var refCompra  = $('#referenceCode').val();
+    
+            console.log('checking out the telerefed´s value',telerefed)            
+             
+             var request = $.ajax({
+                type: "POST",
+                url: "../datosRep.php",
+                dataType: "html",
+                data: {anovigenteD:anovigente,nombrecanD:nombrecan,apellidocanD:apellidocan,lugarcanD:lugarcan,fechacanD:fechacan,cursocanD:cursocan,edadcanD:edadcan,edadproximacanD:edadproximacan,nombrepadreD:nombrepadre,apellidopadreD:apellidopadre,profesionpadreD:profesionpadre,ccpadreD:ccpadre,dirpadreD:dirpadre,telpadreD:telpadre,direofipadreD:direofipadre,teleofipadreD:teleofipadre,nombremadreD:nombremadre,apellidomadreD:apellidomadre,profesionmadreD:profesionmadre,ccmadreD:ccmadre,dirmadreD:dirmadre,telmadreD:telmadre,direofimadreD:direofimadre,teleofimadreD:teleofimadre,nombrerefeuD:nombrerefeu,apellidorefeuD:apellidorefeu,profesionrefeuD:profesionrefeu,direrefeuD:direrefeu,teleofirefeuD:teleofirefeu,telerefeuD:telerefeu,vinculorefeuD:vinculorefeu,nombrerefedD:nombrerefed,apellidorefedD:apellidorefed,profesionrefedD:profesionrefed,direrefedD:direrefed,teleofirefedD:teleofirefed,telerefedD:telerefed,vinculorefedD:vinculorefed,nombrehermaD:nombreherma,apellidohermaD:apellidoherma,edadhermaD:edadherma,colegiohermaD:colegioherma,nombrehermadD:nombrehermad,apellidohermadD:apellidohermad,edadhermadD:edadhermad,colegiohermadD:colegiohermad,nombrehermatD:nombrehermat,apellidohermatD:apellidohermat,edadhermatD:edadhermat,colegiohermatD:colegiohermat,nombrehermacD:nombrehermac,apellidohermacD:apellidohermac,edadhermacD:edadhermac,colegiohermacD:colegiohermac,padecimientocanD:padecimientocan,terminosD:terminos,fechasolicitaD:fechasolicita,consecutivoForD:consecutivoFor,emailCanD:emailCan, RefeC:refCompra },
+            success:function(data){
+                $(".actions li a").addClass('d-none')
+                 $('#loadingView').css('display','none');
+                 $('#last-Step-submitform').removeClass('d-block');
+                 $('#last-Step-submitform').addClass('d-none');
+                 $('#success-message').removeClass('d-none');
+                 $('#success-message').removeClass('last-Step-submitform');
+                 console.log('Let´s show de outcome data',data)
+
+                 form.submit();
+
+                
+                },
+            error:function(data){
+                alert ('Error ');
+                }
+            });     
         },
         onFinished: function (event, currentIndex)
         {
             var form = $(this);
-            form.submit();  
+
 
         },
 
         onStepChanging: function (event, currentIndex, newIndex) {
-           /* $('html, body').animate({
-                scrollTop: $(".wrapper").offset().top
-                }, 800);*/
+           $('html, body').animate({
+                scrollTop: $(".wrapper").offset().top+100
+                }, 800);
 
             var validateAnovigente;
             var validatenombrecan;
@@ -31,6 +127,29 @@ $(function(){
             var validatecursocan;
             var validateedadcan;
             var validateedadproximacan;
+            var validatenombrepadre;
+                var validateapellidopadre;
+                var validateprofesionpadre;
+                var validateccpadre;
+                var validatedirpadre;
+                var validatetelpadre;
+                var validatedireofipadre;
+                var validateteleofipadre;
+                    var validatenombremadre;
+                    var validateapellidomadre;
+                    var validateprofesionmadre;
+                    var validateccmadre;
+                    var validatedirmadre;
+                    var validatetelmadre;
+                    var validatedireofimadre;
+                    var validateteleofimadre;
+                        var validatenombrerefeu;
+                        var validateapellidorefeu;
+                        var validateprofesionrefeu;
+                        var validatedirerefeu;
+                        var validateteleofirefeu;
+                        var validatetelerefeu;
+                        var validatevinculorefeu;
             var Candidatedata=[];
 
 
@@ -46,486 +165,13 @@ $(function(){
             {
                 console.log('when does the fuction is shooted?')
                
-
-
-            console.log('what data does this have',currentIndex)
-            console.log('what data does this have',newIndex)
-           
-           
-
-            var validatenombremadre=validatefield('normal',$('#nombremadre').val(),'nombremadre');
-            var validateapellidomadre=validatefield('normal',$('#apellidomadre').val(),'apellidomadre');
-            var validateprofesionmadre=validatefield('normal',$('#profesionmadre').val(),'profesionmadre');
-            var validateccmadre=validatefield('number',$('#ccmadre').val(),'ccmadre');
-            var validatedirmadre=validatefield('normal',$('#dirmadre').val(),'dirmadre');
-            var validatetelmadre=validatefield('normal',$('#telmadre').val(),'telmadre');
-            var validatedireofimadre=validatefield('normal',$('#direofimadre').val(),'direofimadre');
-            var validateteleofimadre=validatefield('normal',$('#teleofimadre').val(),'teleofimadre');
+}
 
 
 
-
-
-
-
-
-
-            var validatenombrerefeu=validatefield('normal',$('#nombrerefeu').val(),'nombrerefeu');
-            var validateapellidorefeu=validatefield('normal',$('#apellidorefeu').val(),'apellidorefeu');
-            var validateprofesionrefeu=validatefield('normal',$('#profesionrefeu').val(),'profesionrefeu');
-            var validatedirerefeu=validatefield('normal',$('#direrefeu').val(),'direrefeu');
-            var validateteleofirefeu=validatefield('normal',$('#teleofirefeu').val(),'teleofirefeu');
-            var validatetelerefeu=validatefield('normal',$('#telerefeu').val(),'telerefeu');
-            var validatevinculorefeu=validatefield('normal',$('#vinculorefeu').val(),'vinculorefeu');
-
-            var validatebuyerEmail=validatefield('email',$('#buyerEmail').val(),'buyerEmail');
-
-
-
-
-
-            var terminos = $('#terminos').val();
-            var fechasolicita = $('#fechasolicita').val();
-            var consecutivoFor = $('#consecutivoFor').val();
-            var emailCan = $('#buyerEmail').val();
+    
             
-            var refCompra  = $('#referenceCode').val();
-
-
-
-            switch (newIndex) {
-                case 1:
-
-                CheckoutFirstSection1();           
-            
-
-                   // if(numy<arrayEjemplo.lenght){
-                        // hacer cualquier cosa async
-                     //   numy++
-                       // runTime()
-                    //}else{
-                      //  resol('FT esto ya termino')
-                    //}
-
-                        
-
-                    break;
-                case 2:
-                 var validatenombrepadre=validatefield('normal',$('#nombrepadre').val(),'nombrepadre');
-            var validateapellidopadre=validatefield('normal',$('#apellidopadre').val(),'apellidopadre');
-            var validateprofesionpadre=validatefield('normal',$('#profesionpadre').val());
-            var validateccpadre=validatefield('number',$('#ccpadre').val(),'ccpadre');
-            var validatedirpadre=validatefield('normal',$('#dirpadre').val(),'dirpadre');
-            var validatetelpadre=validatefield('normal',$('#telpadre').val(),'telpadre');
-            var validatedireofipadre=validatefield('normal',$('#direofipadre').val(),'direofipadre');
-            var validateteleofipadre=validatefield('normal',$('#teleofipadre').val(),'teleofipadre');
-            
-
-            let FieldsTotal=8;
-
-            let validateSecondSection= new Promise((resolve, reject) => {
-                  if (validatenombrepadre.err) {
-                $(".inv-sign-nombrepadre").css('display','block')
-                $('#nombrepadre').addClass('is-invalid');
-                
-                
-            }else{
-                $(".inv-sign-nombrepadre").css('display','none')
-                $('#nombrepadre').removeClass('is-invalid');
-                
-                
-
-            }
-            if (validateapellidopadre.err) {
-                $(".inv-sign-apellidopadre").css('display','block')
-                $('#apellidopadre').addClass('is-invalid');
-                
-                
-
-            }else{
-                $(".inv-sign-apellidopadre").css('display','none')
-                $('#apellidopadre').removeClass('is-invalid');
-                
-                
-
-            }
-
-            if (validateprofesionpadre.err) {
-                $(".inv-sign-profesionpadre").css('display','block')
-                $('#profesionpadre').addClass('is-invalid');
-                
-                
-
-            }else{
-                $(".inv-sign-profesionpadre").css('display','none')
-                $('#profesionpadre').removeClass('is-invalid');
-                
-                
-
-            }
-
-            if (validateccpadre.err) {
-                $(".inv-sign-ccpadre").css('display','block')
-                $('#ccpadre').addClass('is-invalid');
-                
-                
-
-            }else{
-                $(".inv-sign-ccpadre").css('display','none')
-                $('#ccpadre').removeClass('is-invalid');
-                
-                
-
-            }
-
-            if (validatedirpadre.err) {
-                $('#dirpadre').addClass('is-invalid');
-                $(".inv-sign-dirpadre").css('display','block')
-                
-                
-
-            }else{
-                $('#dirpadre').removeClass('is-invalid');
-
-                $(".inv-sign-dirpadre").css('display','none')
-                
-                
-
-            }
-
-            if (validatetelpadre.err) {
-                $('#telpadre').addClass('is-invalid');
-                $(".inv-sign-telpadre").css('display','block')
-                
-                
-
-            }else{
-                $('#telpadre').removeClass('is-invalid');
-                $(".inv-sign-telpadre").css('display','none')
-                
-                
-
-            }
-            if (validatedireofipadre.err) {
-                $(".inv-sign-direofipadre").css('display','block')
-                $('#direofipadre').addClass('is-invalid');
-                
-                
-
-            }else{
-                $(".inv-sign-direofipadre").css('display','none')
-                $('#direofipadre').removeClass('is-invalid');
-                
-                
-
-            }
-
-            if (validateteleofipadre.err) {
-                $(".inv-sign-teleofipadre").css('display','block')
-                $('#teleofipadre').addClass('is-invalid');
-                
-                
-
-            }else{
-                $('#teleofipadre').removeClass('is-invalid');
-                $(".inv-sign-teleofipadre").css('display','none')
-                
-                
-
-            }
-
-              setTimeout(() => resolve({ValidatorStep:returner,FieldsValidatedTotal:acum}), 600);
-
-
-            }).then(
-                (result)=>{
-                console.log('show me the resolve',result)
-                return true;
-                }
-            );
-
-                  
-
-
-                    
-                    break;
-
-                case 3:
-                    
-
-                    if (validatenombremadre.err) {
-                $(".inv-sign-nombremadre").css('display','block')
-                $('#nombremadre').addClass('is-invalid');
-                
-            }else{
-                $(".inv-sign-nombremadre").css('display','none')
-                $('#nombremadre').removeClass('is-invalid');
-                
-
-            }
-            if (validateapellidomadre.err) {
-                $(".inv-sign-apellidomadre").css('display','block')
-                $('#apellidomadre').addClass('is-invalid');
-                
-
-            }else{
-                $(".inv-sign-apellidomadre").css('display','none')
-                $('#apellidomadre').removeClass('is-invalid');
-                
-
-            }
-
-            if (validateprofesionmadre.err) {
-                $(".inv-sign-profesionmadre").css('display','block')
-                $('#profesionmadre').addClass('is-invalid');
-                
-
-            }else{
-                $(".inv-sign-profesionmadre").css('display','none')
-                $('#profesionmadre').removeClass('is-invalid');
-                
-
-            }
-
-            if (validateccmadre.err) {
-                $(".inv-sign-ccmadre").css('display','block')
-                $('#ccmadre').addClass('is-invalid');
-                
-
-            }else{
-                $(".inv-sign-ccmadre").css('display','none')
-                $('#ccmadre').removeClass('is-invalid');
-                
-
-            }
-
-            if (validatedirmadre.err) {
-                $('#dirmadre').addClass('is-invalid');
-                $(".inv-sign-dirmadre").css('display','block')
-                
-
-            }else{
-                $('#dirmadre').removeClass('is-invalid');
-
-                $(".inv-sign-dirmadre").css('display','none')
-                
-
-            }
-
-            if (validatetelmadre.err) {
-                $('#telmadre').addClass('is-invalid');
-                $(".inv-sign-telmadre").css('display','block')
-                
-
-            }else{
-                $('#telmadre').removeClass('is-invalid');
-                $(".inv-sign-telmadre").css('display','none')
-                
-
-            }
-            if (validatedireofimadre.err) {
-                $(".inv-sign-direofimadre").css('display','block')
-                $('#direofimadre').addClass('is-invalid');
-                
-
-            }else{
-                $(".inv-sign-direofimadre").css('display','none')
-                $('#direofimadre').removeClass('is-invalid');
-                
-
-            }
-
-            if (validateteleofimadre.err) {
-                $(".inv-sign-teleofimadre").css('display','block')
-                $('#teleofimadre').addClass('is-invalid');
-                
-
-            }else{
-                $('#teleofimadre').removeClass('is-invalid');
-                $(".inv-sign-teleofimadre").css('display','none')
-                
-
-            }
-
-
-            return returner;
-
-                    
-
-                    
-                    break;
-
-                case 4:
-
-
-
-
-
-
-
-                    if (validatenombrerefeu.err) {
-                $(".inv-sign-nombrerefeu").css('display','block')
-                $('#nombrerefeu').addClass('is-invalid');
-                
-            }else{
-                $(".inv-sign-nombrerefeu").css('display','none')
-                $('#nombrerefeu').removeClass('is-invalid');
-                
-
-
-            }
-            if (validateapellidorefeu.err) {
-                $(".inv-sign-apellidorefeu").css('display','block')
-                $('#apellidorefeu').addClass('is-invalid');
-                
-
-            }else{
-                $(".inv-sign-apellidorefeu").css('display','none')
-                $('#apellidorefeu').removeClass('is-invalid');
-                
-
-            }
-
-            if (validateprofesionrefeu.err) {
-                $(".inv-sign-profesionrefeu").css('display','block')
-                $('#profesionrefeu').addClass('is-invalid');
-                
-
-            }else{
-                $(".inv-sign-profesionrefeu").css('display','none')
-                $('#profesionrefeu').removeClass('is-invalid');
-                
-
-            }
-
-            if (validatedirerefeu.err) {
-                $(".inv-sign-direrefeu").css('display','block')
-                $('#direrefeu').addClass('is-invalid');
-                
-
-            }else{
-                $(".inv-sign-direrefeu").css('display','none')
-                $('#direrefeu').removeClass('is-invalid');
-                
-
-            }
-
-            if (validateteleofirefeu.err) {
-                $('#teleofirefeu').addClass('is-invalid');
-                $(".inv-sign-teleofirefeu").css('display','block')
-                
-
-            }else{
-                $('#teleofirefeu').removeClass('is-invalid');
-
-                $(".inv-sign-teleofirefeu").css('display','none')
-                
-
-            }
-
-            if (validatetelerefeu.err) {
-                $('#telerefeu').addClass('is-invalid');
-                $(".inv-sign-telerefeu").css('display','block')
-                
-
-            }else{
-                $('#telerefeu').removeClass('is-invalid');
-                $(".inv-sign-telerefeu").css('display','none')
-                
-
-            }
-            if (validatevinculorefeu.err) {
-                $(".inv-sign-vinculorefeu").css('display','block')
-                $('#vinculorefeu').addClass('is-invalid');
-                
-
-            }else{
-                $(".inv-sign-vinculorefeu").css('display','none')
-                $('#vinculorefeu').removeClass('is-invalid');
-                
-
-            }
-
-
-
-
-
-                    break;
-
-                case 5:
-                    return true;
-                    // statements_1
-                    break;
-                case 6:
-                     if (validatebuyerEmail.err) {
-                $(".inv-sign-buyerEmail").css('display','block')
-                $('#buyerEmail').addClass('is-invalid');
-                
-
-            }else{
-                $(".inv-sign-buyerEmail").css('display','none')
-                $('#buyerEmail').removeClass('is-invalid');
-                
-
-            }
-            return returner;
-                    break;
-                case 7:
-                
-                  
-                    
-                    break;
-
-                case 8:
-                    return true;
-                    
-                    
-                    break;
-
-                case 9:
-                    return true;
-                    
-                    
-                    break;
-
-                case 10:
-                    return true;
-                    
-                    
-                    break;
-
-                case 11:
-                    return true;
-                    
-                    if (!$('#legal').val()) {
-
-                   $(".invalid-feedback inv-sign-legal").css('display','block')
-                
-                    
-
-                }else{
-                    $(".invalid-feedback inv-sign-legal").css('display','none')
-                    $('#buyerEmail').removeClass('is-invalid');
-                    
-                }
-                return returner;
-
-
-                    break;
-                default:
-                
-                    break;
-
-            return this.returner;  
-            }
-
-            console.log('which is the returner switcher',returner)
-                return returner;
-            
-            
-
-            
-             }
+             
             if ( newIndex === 1 ) {
                 $('.wizard > .steps ul').addClass('step-2');
             } else {
@@ -567,21 +213,274 @@ $(function(){
             } else {
                 $('.wizard > .steps ul').removeClass('step-9');
             }
+
             if ( newIndex === 9 ) {
-                $('.wizard > .steps ul').addClass('step-10');
+                $('.wizard > .steps ul').addClass('step-9');
             } else {
-                $('.wizard > .steps ul').removeClass('step-10');
+                $('.wizard > .steps ul').removeClass('step-9');
             }
-            if ( newIndex === 10 ) {
-                $('.wizard > .steps ul').addClass('step-11');
-            } else {
-                $('.wizard > .steps ul').removeClass('step-11');
+
+            
+
+            var validatebuyerEmail=validatefield('email',$('#buyerEmail').val(),'buyerEmail');
+
+
+
+
+
+            var terminos = $('#terminos').val();
+            var fechasolicita = $('#fechasolicita').val();
+            var consecutivoFor = $('#consecutivoFor').val();
+            var emailCan = $('#buyerEmail').val();
+            
+            var refCompra  = $('#referenceCode').val();
+
+
+
+            switch (newIndex) {
+                case 1:
+         
+            
+        var numy=0;
+        validateAnovigente=validatefield('normal',$('#anovigente').val(),'anovigente');
+        validatenombrecan=validatefield('normal',$('#nombrecan').val(),'nombrecan');
+        validateapellidocan=validatefield('normal',$('#apellidocan').val(),'apellidocan');
+        validatelugarcan=validatefield('normal',$('#lugarcan').val(),'lugarcan');
+        validatefechacan=validatefield('normal',$('#fechacan').val(),'fechacan');
+        validatecursocan=validatefield('normal',$('#cursocan').val(),'cursocan');
+        validateedadcan=validatefield('number',$('#edadcan').val(),'edadcan');
+        validateedadproximacan=validatefield('number',$('#edadproximacan').val(),'edadproximacan');
+        Candidatedata=[validateAnovigente,validatenombrecan,validateapellidocan,validatelugarcan,validatefechacan,validatecursocan,validateedadcan,validateedadproximacan];
+            var catchIssue=null;
+        
+            for ( numy = Candidatedata.length - 1; numy >= 0; numy--) {
+                if(numy>0){
+                            
+                            console.log('log 1data',Candidatedata[numy]);
+                            if (Candidatedata[numy].err) {
+                                $(".inv-sign-"+Candidatedata[numy].name).css('display','block')
+                                $('#'+Candidatedata[numy].name).addClass('is-invalid');
+                        
+                            }else{
+                                $(".inv-sign-"+Candidatedata[numy].name).css('display','none')
+                                $('#'+Candidatedata[numy].name).removeClass('is-invalid');
+                            }
+
+                        }else{
+                            if (validateAnovigente.err || validatenombrecan.err || validateapellidocan.err || validatelugarcan.err || validatefechacan.err || validatecursocan.err || validateedadcan.err || validateedadproximacan.err) {
+                                catchIssue=false;
+                                return false;
+                            }else{
+                                catchIssue=true;
+                                return true;
+                                console.log('know if each field is right!',catchIssue)
+
+                            }
+                            
+                        }
             }
-            if ( newIndex === 11 ) {
-                $('.wizard > .steps ul').addClass('step-12');
-            } else {
-                $('.wizard > .steps ul').removeClass('step-12');
+
+                        
+
+                    break;
+                case 2:
+                 validatenombrepadre=validatefield('normal',$('#nombrepadre').val(),'nombrepadre');
+                 validateapellidopadre=validatefield('normal',$('#apellidopadre').val(),'apellidopadre');
+                 validateprofesionpadre=validatefield('normal',$('#profesionpadre').val(),'profesionpadre');
+                 validateccpadre=validatefield('number',$('#ccpadre').val(),'ccpadre');
+                 validatedirpadre=validatefield('normal',$('#dirpadre').val(),'dirpadre');
+                 validatetelpadre=validatefield('normal',$('#telpadre').val(),'telpadre');
+                 validatedireofipadre=validatefield('normal',$('#direofipadre').val(),'direofipadre');
+                 validateteleofipadre=validatefield('normal',$('#teleofipadre').val(),'teleofipadre');
+                var numy=0;
+                Candidatedata=[validatenombrepadre,validateapellidopadre,validateprofesionpadre,validateccpadre,validatedirpadre,validatetelpadre,validatedireofipadre,validateteleofipadre];
+                    var catchIssue=null;
+        
+            for ( numy = Candidatedata.length; numy >= 0;) {
+                if(numy>0){
+                            
+                            console.log('log 1data',Candidatedata[numy-1]);
+                            if (Candidatedata[numy-1].err) {
+                                $(".inv-sign-"+Candidatedata[numy-1].name).css('display','block')
+                                $('#'+Candidatedata[numy-1].name).addClass('is-invalid');
+                        
+                            }else{
+                                $(".inv-sign-"+Candidatedata[numy-1].name).css('display','none')
+                                $('#'+Candidatedata[numy-1].name).removeClass('is-invalid');
+                            }
+
+                        }else{
+                                console.log('know if each field is right!',catchIssue)
+
+                            if (validatenombrepadre.err || validateapellidopadre.err || validateprofesionpadre.err || validateccpadre.err || validatedirpadre.err || validatetelpadre.err || validatedireofipadre.err || validateteleofipadre.err) {
+                                catchIssue=false;
+                                return false;
+                            }else{
+                                catchIssue=true;
+                                return true;
+
+                            }
+                            
+                        }
+                         numy--
             }
+
+        
+        
+
+                    
+                    break;
+
+                case 3:
+                    validatenombremadre=validatefield('normal',$('#nombremadre').val(),'nombremadre');
+                    validateapellidomadre=validatefield('normal',$('#apellidomadre').val(),'apellidomadre');
+                    validateprofesionmadre=validatefield('normal',$('#profesionmadre').val(),'profesionmadre');
+                    validateccmadre=validatefield('number',$('#ccmadre').val(),'ccmadre');
+                    validatedirmadre=validatefield('normal',$('#dirmadre').val(),'dirmadre');
+                    validatetelmadre=validatefield('normal',$('#telmadre').val(),'telmadre');
+                    validatedireofimadre=validatefield('normal',$('#direofimadre').val(),'direofimadre');
+                    validateteleofimadre=validatefield('normal',$('#teleofimadre').val(),'teleofimadre');
+                    var numy=0;
+                Candidatedata=[validatenombremadre,validateapellidomadre,validateprofesionmadre,validateccmadre,validatedirmadre,validatetelmadre,validatedireofimadre,validateteleofimadre];
+                    var catchIssue=null;
+        
+            for ( numy = Candidatedata.length; numy >= 0;) {
+                if(numy>0){
+                            
+                            console.log('log 1data',Candidatedata[numy-1]);
+                            if (Candidatedata[numy-1].err) {
+                                $(".inv-sign-"+Candidatedata[numy-1].name).css('display','block')
+                                $('#'+Candidatedata[numy-1].name).addClass('is-invalid');
+                        
+                            }else{
+                                $(".inv-sign-"+Candidatedata[numy-1].name).css('display','none')
+                                $('#'+Candidatedata[numy-1].name).removeClass('is-invalid');
+                            }
+
+                        }else{
+                            if (validatenombremadre.err || validateapellidomadre.err || validateprofesionmadre.err || validateccmadre.err || validatedirmadre.err || validatetelmadre.err || validatedireofimadre.err || validateteleofimadre.err) {
+                                catchIssue=false;
+                                return false;
+                            }else{
+                                catchIssue=true;
+                                return true;
+                                console.log('know if each field is right!',catchIssue)
+
+                            }
+                            
+                        }
+
+                         numy--
+            
+            }
+
+                    
+
+                    
+                    break;
+
+                case 4:
+
+                    validatenombrerefeu=validatefield('normal',$('#nombrerefeu').val(),'nombrerefeu');
+                    validateapellidorefeu=validatefield('normal',$('#apellidorefeu').val(),'apellidorefeu');
+                    validateprofesionrefeu=validatefield('normal',$('#profesionrefeu').val(),'profesionrefeu');
+                    validatedirerefeu=validatefield('normal',$('#direrefeu').val(),'direrefeu');
+                    validateteleofirefeu=validatefield('normal',$('#teleofirefeu').val(),'teleofirefeu');
+                    validatetelerefeu=validatefield('normal',$('#telerefeu').val(),'telerefeu');
+                    validatevinculorefeu=validatefield('normal',$('#vinculorefeu').val(),'vinculorefeu');
+                    var numy=0;
+                    Candidatedata=[validatenombrerefeu,validateapellidorefeu,validateprofesionrefeu,validatedirerefeu,validateteleofirefeu,validatetelerefeu,validatevinculorefeu];
+                    var catchIssue=null;
+                    for ( numy = Candidatedata.length; numy >= 0;) {
+                if(numy>0){
+                            
+                            console.log('log 1data',Candidatedata[numy-1]);
+                            if (Candidatedata[numy-1].err) {
+                                $(".inv-sign-"+Candidatedata[numy-1].name).css('display','block')
+                                $('#'+Candidatedata[numy-1].name).addClass('is-invalid');
+                        
+                            }else{
+                                $(".inv-sign-"+Candidatedata[numy-1].name).css('display','none')
+                                $('#'+Candidatedata[numy-1].name).removeClass('is-invalid');
+                            }
+                                }else{
+                                    if (validatenombrerefeu.err || validateapellidorefeu.err || validateprofesionrefeu.err || validatedirerefeu.err || validateteleofirefeu.err || validatetelerefeu.err || validatevinculorefeu.err) {
+                                        catchIssue=false;
+                                        return false;
+                                    }else{
+                                        catchIssue=true;
+                                        return true;
+                                        console.log('know if each field is right!',catchIssue)
+
+                                    }
+                                    
+                                }
+                                numy--
+                    
+                    }
+
+                    
+
+
+                    break;
+
+                case 5:
+                    return true;
+                    
+                    break;
+                case 6:
+                     if (validatebuyerEmail.err) {
+                        $(".inv-sign-buyerEmail").css('display','block')
+                        $('#buyerEmail').addClass('is-invalid');
+                            return false;
+                
+
+                    }else{
+                            $(".inv-sign-buyerEmail").css('display','none')
+                            $('#buyerEmail').removeClass('is-invalid');
+                            return true;
+
+                    }
+            
+                    break;
+            
+                case 7:
+                    return true;
+                    
+                    
+                    break;
+
+             
+                case 8:
+                    return true
+                
+
+
+                    break;
+                case 9:
+                    if (!$('#legal').prop('checked')) {
+
+                       $(".inv-sign-legal").css('display','block')
+                    
+                        return false;
+                                
+
+                    }else{
+                        $(".inv-sign-legal").css('display','none')
+                        return true;
+
+                        
+                    }
+
+                    break;
+                default:
+                
+                    break;
+  
+            }
+
+            
+            
 
         },
         labels: {
@@ -592,7 +491,7 @@ $(function(){
 
     });
 
-    function validatefield(type,value) {
+    function validatefield(type,value,nameSelector) {
 
         switch (type) {
             case 'email':
@@ -601,10 +500,10 @@ $(function(){
 
 
                 if (!re.test(value) || !value){
-                   return {err:true,msg:'Correo electrónico incorrecto'}
+                   return {err:true,name:nameSelector,msg:'Correo electrónico incorrecto'}
                    
                 }else{
-                    return {err:false};
+                    return {err:false,name:nameSelector};
                    
 
                 }
@@ -613,14 +512,14 @@ $(function(){
 
             case 'number':
                 if (!value || value==null || value=='' ) {
-                    return {err:true,msg:'Campo obligatorio'}
+                    return {err:true,name:nameSelector,msg:'Campo obligatorio'}
 
                 }else{
                     if(isNaN(value)){
-                        return {err:true,msg:'Campo obligatorio'}
+                        return {err:true,name:nameSelector,msg:'Campo obligatorio'}
                 
                     }else{
-                        return {err:false};
+                        return {err:false,name:nameSelector};
                     }
 
                 }
@@ -630,161 +529,20 @@ $(function(){
             case 'normal':
                 
                 if(!value){
-                    return {err:true,msg:'Campo obligatorio'};
+                    return {err:true,name:nameSelector,msg:'Campo obligatorio'};
                 
                 }else{
-                    return {err:false};
+                    return {err:false,name:nameSelector};
                 
                 }
                 break;
             default:
-                return {err:false};
+                return {err:false,name:nameSelector};
                 break;
         }
     }
 
 
-    function CheckoutFirstSection1(){
-        let numy=0;
-        validateAnovigente=validatefield('normal',$('#anovigente').val(),'anovigente');
-        validatenombrecan=validatefield('normal',$('#nombrecan').val(),'nombrecan');
-        validateapellidocan=validatefield('normal',$('#apellidocan').val(),'apellidocan');
-        validatelugarcan=validatefield('normal',$('#lugarcan').val(),'lugarcan');
-        validatefechacan=validatefield('normal',$('#fechacan').val(),'fechacan');
-        validatecursocan=validatefield('normal',$('#cursocan').val(),'cursocan');
-        validateedadcan=validatefield('number',$('#edadcan').val(),'edadcan');
-        validateedadproximacan=validatefield('number',$('#edadproximacan').val(),'edadproximacan');
-        Candidatedata=[validateAnovigente,validatenombrecan,validateapellidocan,validatelugarcan,validatefechacan,validatecursocan,validateedadcan,validateedadproximacan];
-        
-        for ( numy = Candidatedata.length - 1; numy >= 0; numy--) {
-            
-            if(numy>0){
-                        
-        console.log('log 1data',Candidatedata[numy]);
-                        if (validatecursocan.err) {
-                    $(".inv-sign-cursocan").css('display','block')
-                    $('#cursocan').addClass('is-invalid');
-                    
-                    
-            }else{
-                $(".inv-sign-cursocan").css('display','none')
-                $('#cursocan').remove('is-invalid');
-                    
-            }
-
-            if (validateAnovigente.err) {
-                $(".inv-sign-anovigente").css('display','block')
-                $('#anovigente').addClass('is-invalid');
-                
-                    
-
-            }else{
-                $(".inv-sign-anovigente").css('display','none')
-                $('#anovigente').remove('is-invalid');
-
-                
-                    
-
-            }
-
-            if (validatenombrecan.err) {
-                $(".inv-sign-nombrecan").css('display','block')
-                $('#nombrecan').addClass('is-invalid');
-                
-                    
-
-            }else{
-                $(".inv-sign-nombrecan").css('display','none')
-                $('#nombrecan').removeClass('is-invalid');
-
-                
-                    
-
-            }
-
-            if (validateapellidocan.err) {
-                $(".inv-sign-apellidocan").css('display','block')
-                $('#apellidocan').addClass('is-invalid');
-                console.log('aquii entra al error');
-                
-                    
-
-            }else{
-                $(".inv-sign-apellidocan").css('display','none')
-                $('#apellidocan').removeClass('is-invalid');
-                
-                    
-
-
-            }
-
-            if (validatelugarcan.err) {
-                $('#lugarcan').addClass('is-invalid');
-                $(".inv-sign-lugarcan").css('display','block')
-                
-                    
-
-            }else{
-                $('#lugarcan').removeClass('is-invalid');
-
-                $(".inv-sign-lugarcan").css('display','none')
-                
-                    
-
-
-            }
-
-            if (validatefechacan.err) {
-                $('#fechacan').addClass('is-invalid');
-                
-                    
-
-                $(".inv-sign-fechacan").css('display','block')
-            }else{
-                $('#fechacan').removeClass('is-invalid');
-                $(".inv-sign-fechacan").css('display','none')
-                
-                    
-
-
-            }
-            if (validateedadcan.err) {
-                $(".inv-sign-edadcan").css('display','block')
-                $('#edadcan').addClass('is-invalid');
-                
-                    
-
-            }else{
-                $(".inv-sign-edadcan").css('display','none')
-                $('#edadcan').removeClass('is-invalid');
-                
-                    
-
-
-            }
-
-            if (validateedadproximacan.err) {
-                $(".inv-sign-edadproximacan").css('display','block')
-                $('#edadproximacan').addClass('is-invalid');
-                
-                    
-
-            }else{
-                $('#edadproximacan').removeClass('is-invalid');
-                $(".inv-sign-edadproximacan").css('display','none')
-                
-                    
-
-            }
-
-                    }else{
-                        console.log('log data')
-                    }
-        }
-
-
-
-    }
 
 
             

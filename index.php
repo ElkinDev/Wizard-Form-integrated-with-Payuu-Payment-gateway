@@ -13,7 +13,8 @@ session_start();
 	 $numInverCarga  = mysql_num_rows($listInverCarga);
 	 $resulInver     = mysql_fetch_array($listInverCarga);
 
-	 $idUtimo = $resulInver['n_formulario'];
+	 //$idUtimo = $resulInver['n_formulario'];
+		$idUtimo = $resulInver['id_formulario'];
 	 $consecutivoA = str_pad($idUtimo+1,4,'0',STR_PAD_LEFT);
 
 
@@ -47,41 +48,57 @@ session_start();
 <html>
 	<head>
 		<meta charset="utf-8">
-		<title>Fomurlario de Admision | Colegio Refous  </title>
+		<title>Fomulario de Admision | Colegio Refous  </title>
 		<meta name="viewport" content="width=device-width, initial-scale=1.0">
-		<meta name="author" content="colorlib.com">
-
+		<meta name="author" content="https://www.linkedin.com/in/elkinmendozacova/">
+		<meta name="description" content="Colegio campestre ubicado en Bogotá-Cotá. Preescolar, Primaria y Bachillerato, Calendario A. Colegio Refous con más de 60 años de experiencia.">
+	    <meta name="keywords" content="colegiorefous.com, colegiorefous.com.co, colegiorefous.edu.co, colegios, Roland Jeangros, Colombia, Refous, Colegio Refous, Siberia, Cota, Educación Colombia, Colegios Bogotá, Colegios Cota, Estudiantes, Primaria, Bachillerato, Colegios Primaria, Colegios Bachillerato, Sapiens Research, Calendario A, Campestre, Educación, Educación a partir de las cosas simples, Monsieur Roland Jeangros, Colegio Campestre; Admisiones 2020"  />
+	    <link rel="shortcut icon" href="../images/favicon.png" type="image/x-icon" />
+	    <link rel="apple-touch-icon" href="../images/favicon.png" type="image/x-icon" />
+		<link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.10.2/css/all.css">
 		<!-- Bootstrap core CSS -->
 		<link href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.3.1/css/bootstrap.min.css" rel="stylesheet">
 		<!-- Material Design Bootstrap -->
 		<link href="https://cdnjs.cloudflare.com/ajax/libs/mdbootstrap/4.8.8/css/mdb.min.css" rel="stylesheet">
 		<!-- Material Design Bootstrap -->
 		<link rel="stylesheet" href="fonts/material-design-iconic-font/css/material-design-iconic-font.css">
-
 		<!-- DATE-PICKER -->
 		<link rel="stylesheet" href="vendor/date-picker/css/datepicker.min.css">
 
 		<!-- STYLE CSS -->
 		<link rel="stylesheet" href="css/style.css">
+		<link rel="stylesheet" type="text/css" href="css/ElkinDevTooltip.css">
+
 	</head>
 	<body>
+		<div class="hmp-loading loading-overlay" id="loadingView">
+  <div class="spinner">
+</div></div>
+
 		<div class="wrapper">
-			<div class="image-holder">
-				<img src="images/form-wizard.png" alt="">
+			<div class="GobackButton">
+				<a href="https://colegiorefous.edu.co/admisiones.php"> <i class="fas fa-angle-left"></i> Volver al página del Refous</a>
 			</div>
-            <form method="post" id="frmaccion" action="https://sandbox.checkout.payulatam.com/ppp-web-gateway-payu" target="_blank" novalidate >
+			<div class="image-holder">
+				<h1>FORMULARIO DE ADMISION</h1><br>
+				<img src="../images/logo.svg" width="200" alt="">
+			</div>
+            <form method="post" id="frmaccion" action="https://checkout.payulatam.com/ppp-web-gateway-payu/" target="_blank" novalidate >
             	<!--  -->
             	<div id="wizard">
             		<!-- SECTION 1 -->
+
 	                <h4></h4>
 	                <section>
+
+
 	                	<h3>DATOS DEL CANDIDATO</h3>
 
 	                   	<div class="row mb-4">
 	                   		<div class="col-md-6">
 	                   		<div class="form-row" >
-		                    	<label for="validationCustom01">
-		                    		Curso al cual aspira el candidato
+		                    	<label  data-tooltip="Campo Requerido" for="validationCustom01">
+		                    		Curso al cual aspira el candidato <i class="far fa-question-circle"></i>
 		                    	</label>
 	                    	<div class="form-holder">
 	                    		<select name="cursocan" id='cursocan' class="form-control" required>
@@ -102,8 +119,8 @@ session_start();
 	                   		</div>
 	                   		<div class="col-md-6">
 	                   			<div class="form-row">
-		                    	<label for="">
-		                    		Para el año:
+		                    	<label data-tooltip="Campo Requerido" for="">
+		                    		Para el año: <i class="far fa-question-circle"></i>
 		                    	</label>
 		                    	<div class="form-holder">
 		                    		<select name='anovigente' id='anovigente' class="form-control" required>
@@ -126,8 +143,8 @@ session_start();
 						<div class="row mb-4">
 	                   	 	<div class="col-md-6">
 	                   	 		<div class="form-row">
-	                    		<label for="">
-	                    		Nombres del candidato:
+	                    		<label  data-tooltip="Campo Requerido" for="">
+	                    		Nombres del candidato: <i class="far fa-question-circle"></i>
 	                    		</label>
 	                    		<div class="form-holder">
 	                    			<input type="text" class="form-control" name="nombrecan" id="nombrecan" type="text" placeholder="1. Nombres del candidato *" required>
@@ -138,8 +155,8 @@ session_start();
 	                   	 	</div>
 		                   	<div class="col-md-6">
 		                   		<div class="form-row">
-		                    		<label for="">
-		                    		Apellidos del candidato:
+		                    		<label  data-tooltip="Campo Requerido" for="">
+		                    		Apellidos del candidato: <i class="far fa-question-circle"></i>
 		                    		</label>
 		                    		<div class="form-holder">
 		                    			<input type="text" class="form-control" name="apellidocan" id="apellidocan" placeholder="1. Apellidos del candidato *" required>
@@ -154,8 +171,8 @@ session_start();
 	                   	<div class="row mb-4">
 	                   	 	<div class="col-md-6">
 	                   	 		<div class="form-row">
-		                    		<label for="">
-		                    		Lugar de nacimiento:
+		                    		<label data-tooltip="Campo Requerido" for="">
+		                    		Lugar de nacimiento: <i class="far fa-question-circle"></i>
 		                    		</label>
 		                    		<div class="form-holder">
 		                    			<input type="text" class="form-control" placeholder="Lugar de nacimiento" name="lugarcan" id='lugarcan' required>
@@ -166,11 +183,11 @@ session_start();
 	                   	 	</div>
 		                   	<div class="col-md-6">
 		                   		<div class="form-row">
-			                    	<label for="">
-			                    		Fecha de nacimiento:
+			                    	<label data-tooltip="Campo Requerido" for="">
+			                    		Fecha de nacimiento: <i class="far fa-question-circle"></i>
 			                    	</label>
 			                    	<div class="form-holder">
-			                    		<input type="text" class="form-control datepicker-here" data-language='sp' data-date-format="yyyy - mm - dd" name="fechacan" id='fechacan'>
+			                    		<input type="text" class="form-control datepicker-here" data-language='en' data-date-format="yyyy - mm - dd" name="fechacan" id='fechacan'>
 			                    	</div>
 			                    	<div class="invalid-feedback inv-sign-fechacan">
           						Fecha obligatoria.</div>
@@ -183,11 +200,11 @@ session_start();
 	                    	  	<div class="row mb-4">
 	                   	 	<div class="col-md-6">
 	                   	 		<div class="form-row">
-		                    	<label for="">
-		                    		Años (al próximo 31 de Diciembre)
+		                    	<label  data-tooltip="Campo Requerido" for="">
+		                    		Años (al próximo 31 de Diciembre) <i class="far fa-question-circle"></i>
 		                    	</label>
 		                    	<div class="form-holder">
-		                    		<input type="number" class="form-control datepicker-here" placeholder="" name="edadproximacan" id='edadproximacan'>
+		                    		<input type="number" class="form-control" placeholder="" name="edadproximacan" id='edadproximacan'>
 		                    	</div>
 		                    	<div class="invalid-feedback inv-sign-edadproximacan">
           						Campo obligatorio.</div>
@@ -195,8 +212,8 @@ session_start();
 	                   	 	</div>
 		                   	<div class="col-md-6">
 		                   		<div class="form-row">
-	                    	<label for="">
-	                    		Edad:
+	                    	<label data-tooltip="Campo Requerido" for="">
+	                    		Edad: <i class="far fa-question-circle"></i>
 	                    	</label>
 	                    	<div class="form-holder">
 	                    		<select name="edadcan" id='edadcan' class="form-control">
@@ -230,8 +247,8 @@ session_start();
 	                	<div class="row mb-4">
 	                		<div class="col-md-6">
 	                			<div class="form-row">
-			                    	<label for="">
-			                    		Nombres del padre:
+			                    	<label data-tooltip="Campo Requerido" for="">
+			                    		Nombres del padre: <i class="far fa-question-circle"></i>
 			                    	</label>
 			                    	<div class="form-holder">
 			                    		<input type="text" class="form-control" placeholder="Nombres del padre"  name="nombrepadre" id="nombrepadre" required>
@@ -242,8 +259,8 @@ session_start();
 	                		</div>
 	                		<div class="col-md-6">
 	                			<div class="form-row">
-			                    	<label for="">
-			                    		Apellidos del padre:
+			                    	<label data-tooltip="Campo Requerido" for="">
+			                    		Apellidos del padre: <i class="far fa-question-circle"></i>
 			                    	</label>
 			                    	<div class="form-holder">
 			                    		<input type="text" class="form-control" placeholder="Apellidos del padre" name="apellidopadre" id='apellidopadre' required>
@@ -257,8 +274,8 @@ session_start();
 	                	<div class="row mb-4">
 	                		<div class="col-md-6">
 	                			<div class="form-row">
-			                    	<label for="">
-			                    		Número de cédula:
+			                    	<label data-tooltip="Campo Requerido" for="">
+			                    		Número de cédula: <i class="far fa-question-circle"></i>
 			                    	</label>
 			                    	<div class="form-holder">
 			                    		<input type="text" class="form-control" name="ccpadre" id='ccpadre' placeholder="CC. No." required>
@@ -269,8 +286,8 @@ session_start();
 	                		</div>
 	                		<div class="col-md-6">
 	                			<div class="form-row">
-	                    	<label for="">
-	                    		Profesion:
+	                    	<label data-tooltip="Campo Requerido" for="">
+	                    		Profesion: <i class="far fa-question-circle"></i>
 	                    	</label>
 	                    	<div class="form-holder">
 	                    		<input type="text" placeholder="Profesión" name="profesionpadre" id='profesionpadre' class="form-control" required>
@@ -284,8 +301,8 @@ session_start();
 	                		
 	                		<div class="col-md-6">
 	                			<div class="form-row">
-	                    	<label for="">
-	                    		Dirección de Domicilio:
+	                    	<label data-tooltip="Campo Requerido" for="">
+	                    		Dirección de Domicilio: <i class="far fa-question-circle"></i>
 	                    	</label>
 	                    	<div class="form-holder">
 	                    		<input type="text" placeholder="Dirección de domicilio" name="dirpadre" id='dirpadre' class="form-control" required>
@@ -296,8 +313,8 @@ session_start();
 	                		</div>
 	                		<div class="col-md-6">
 	                			<div class="form-row">
-			                    	<label for="">
-			                    		Teléfono:
+			                    	<label data-tooltip="Campo Requerido" for="">
+			                    		Teléfono: <i class="far fa-question-circle"></i>
 			                    	</label>
 			                    	<div class="form-holder">
 			                    		<input name="telpadre" id='telpadre' placeholder="ej. 3168669379 o 32395421" type="text" class="form-control" required>
@@ -311,8 +328,8 @@ session_start();
 	                		
 	                		<div class="col-md-6">
 	                			<div class="form-row">
-			                    	<label for="">
-			                    		Dirección de oficina:
+			                    	<label data-tooltip="Campo Requerido" for="">
+			                    		Dirección de oficina: <i class="far fa-question-circle"></i>
 			                    	</label>
 			                    	<div class="form-holder">
 			                    		<input name="direofipadre" id='direofipadre'  type="text" class="form-control" required>
@@ -323,8 +340,8 @@ session_start();
 	                		</div>
 	                		<div class="col-md-6">
 	                			<div class="form-row">
-	                    	<label for="">
-	                    		Teléfono de oficina:
+	                    	<label data-tooltip="Campo Requerido" for="">
+	                    		Teléfono de oficina: <i class="far fa-question-circle"></i>
 	                    	</label>
 	                    	<div class="form-holder">
 	                    		<input name="teleofipadre" id='teleofipadre' type="text" placeholder="Ej. 13524852 ext 1" class="form-control" required>
@@ -348,8 +365,8 @@ session_start();
 	                		<div class="row mb-4">
 	                		<div class="col-md-6">
 	                			<div class="form-row">
-	                    	<label for="">
-	                    		Nombres de la madre:
+	                    	<label data-tooltip="Campo Requerido" for="">
+	                    		Nombres de la madre: <i class="far fa-question-circle"></i>
 	                    	</label>
 	                    	<div class="form-holder">
 	                    		<input type="text" name="nombremadre" id="nombremadre" class="form-control">
@@ -360,8 +377,8 @@ session_start();
 	                		</div>
 	                		<div class="col-md-6">
 	                			<div class="form-row">
-	                    	<label for="">
-	                    		Apellidos de la madre:
+	                    	<label data-tooltip="Campo Requerido" for="">
+	                    		Apellidos de la madre: <i class="far fa-question-circle"></i>
 	                    	</label>
 	                    	<div class="form-holder">
 	                    		<input name="apellidomadre" id='apellidomadre' type="text" class="form-control">
@@ -374,8 +391,8 @@ session_start();
 	                	<div class="row mb-4">
 	                		<div class="col-md-6">
 	                			<div class="form-row">
-	                    	<label for="">
-	                    		Número de cédula:
+	                    	<label data-tooltip="Campo Requerido" for="">
+	                    		Número de cédula: <i class="far fa-question-circle"></i>
 	                    	</label>
 	                    	<div class="form-holder">
 	                    		<input name="ccmadre" id='ccmadre' type="text"  class="form-control">
@@ -387,8 +404,8 @@ session_start();
 	                		</div>
 	                		<div class="col-md-6">
 	                			<div class="form-row">
-	                    	<label for="">
-	                    		Profesion:
+	                    	<label data-tooltip="Campo Requerido" for="">
+	                    		Profesion: <i class="far fa-question-circle"></i>
 	                    	</label>
 	                    	<div class="form-holder">
 	                    		<input name="profesionmadre" id='profesionmadre'  type="text" class="form-control">
@@ -402,8 +419,8 @@ session_start();
 	                		<div class="col-md-6">
 	                			
 	                    <div class="form-row">
-	                    	<label for="">
-	                    		Dirección de Domicilio:
+	                    	<label data-tooltip="Campo Requerido" for="">
+	                    		Dirección de Domicilio: <i class="far fa-question-circle"></i>
 	                    	</label>
 	                    	<div class="form-holder">
 	                    		<input name="dirmadre" id='dirmadre' type="text" class="form-control">
@@ -415,8 +432,8 @@ session_start();
 	                		</div>
 	                		<div class="col-md-6">
 	                			<div class="form-row">
-	                    	<label for="">
-	                    		Teléfono:
+	                    	<label data-tooltip="Campo Requerido" for="">
+	                    		Teléfono: <i class="far fa-question-circle"></i>
 	                    	</label>
 	                    	<div class="form-holder">
 	                    		<input name="telmadre" id='telmadre' placeholder="Ej 3152388431 o 314565 ext 1" type="text" class="form-control">
@@ -428,8 +445,8 @@ session_start();
 	                	</div><div class="row mb-4">
 	                		<div class="col-md-6">
 	                			<div class="form-row">
-	                    	<label for="">
-	                    		Dirección de oficina:
+	                    	<label data-tooltip="Campo Requerido" for="">
+	                    		Dirección de oficina: <i class="far fa-question-circle"></i>
 	                    	</label>
 	                    	<div class="form-holder">
 	                    		<input name="direofimadre" id='direofimadre' type="text" class="form-control">
@@ -441,8 +458,8 @@ session_start();
 	                		</div>
 	                		<div class="col-md-6">
 	                		<div class="form-row">
-		                    	<label for="">
-		                    		Teléfono de oficina:
+		                    	<label data-tooltip="Campo Requerido" for="">
+		                    		Teléfono de oficina: <i class="far fa-question-circle"></i>
 		                    	</label>
 		                    	<div class="form-holder">
 		                    		<input name="teleofimadre" id='teleofimadre' placeholder="Ej. 3975285 ext 342" type="text" class="form-control">
@@ -466,8 +483,8 @@ session_start();
 	                	<div class="row mb-4">
 	                		<div class="col-md-6">
 	                			<div class="form-row">
-		                    	<label for="">
-		                    		Nombres:
+		                    	<label data-tooltip="Campo Requerido" for="">
+		                    		Nombres: <i class="far fa-question-circle"></i>
 		                    	</label>
 		                    	<div class="form-holder">
 		                    		<input name="nombrerefeu" id='nombrerefeu'type="text" class="form-control">
@@ -478,9 +495,9 @@ session_start();
 	                		</div>
 	                		<div class="col-md-6">
 	                			<div class="form-row">
-	                    	<label for="">
-	                    		Apellidos:
-	                    	</label>
+	                    	<label data-tooltip="Campo Requerido" for="">
+	                    		Apellidos:<i class="far fa-question-circle"></i>
+	                    	</label> 
 	                    	<div class="form-holder">
 	                    		<input name="apellidorefeu" id='apellidorefeu' type="text" class="form-control">
 	                    	</div>
@@ -492,8 +509,8 @@ session_start();
 	                	</div><div class="row mb-4">
 	                		<div class="col-md-6">
 	                			  <div class="form-row">
-	                    	<label for="">
-	                    		Profesion:
+	                    	<label data-tooltip="Campo Requerido" for="">
+	                    		Profesion: <i class="far fa-question-circle"></i>
 	                    	</label>
 	                    	<div class="form-holder">
 	                    		<input name="profesionrefeu" id='profesionrefeu' type="text" class="form-control">
@@ -504,8 +521,8 @@ session_start();
 	                		</div>
 	                		<div class="col-md-6">
 	                			<div class="form-row">
-	                    	<label for="">
-	                    		Dirección:
+	                    	<label data-tooltip="Campo Requerido" for="">
+	                    		Dirección: <i class="far fa-question-circle"></i>
 	                    	</label>
 	                    	<div class="form-holder">
 	                    		<input name="direrefeu" id='direrefeu' type="text" class="form-control">
@@ -519,8 +536,8 @@ session_start();
 	                	<div class="row mb-4">
 	                		<div class="col-md-6">
 	                			<div class="form-row">
-	                    	<label for="">
-	                    		Teléfono Domicilio:
+	                    	<label data-tooltip="Campo Requerido" for="">
+	                    		Teléfono Domicilio: <i class="far fa-question-circle"></i>
 	                    	</label>
 	                    	<div class="form-holder">
 	                    		<input name="telerefeu" id='telerefeu' type="text" placeholder="Ej. 3168669379 o 4561234" class="form-control">
@@ -531,8 +548,8 @@ session_start();
 	                		</div>
 	                		<div class="col-md-6">
 	                			<div class="form-row">
-	                    	<label for="">
-	                    		Teléfono de oficina:
+	                    	<label data-tooltip="Campo Requerido" for="">
+	                    		Teléfono de oficina: <i class="far fa-question-circle"></i>
 	                    	</label>
 	                    	<div class="form-holder">
 	                    		<input name="teleofirefeu" id='teleofirefeu' placeholder="Ej. 6754567 ext. 541" type="text" class="form-control">
@@ -547,8 +564,8 @@ session_start();
 	                    
 	                    
 	                    <div class="form-row">
-	                    	<label for="">
-	                    		Naturaleza de las relaciones:
+	                    	<label data-tooltip="Campo Requerido" for="">
+	                    		Naturaleza de las relaciones: <i class="far fa-question-circle"></i>
 	                    	</label>
 	                    	<div class="form-holder">
 	                    		<input name="vinculorefeu" id='vinculorefeu' type="text" class="form-control">
@@ -568,8 +585,8 @@ session_start();
 	                	<div class="row mb-4">
 	                		<div class="col-md-6">
 	                			<div class="form-row">
-	                    	<label for="">
-	                    		Nombres:
+	                    	<label  for="">
+	                    		Nombres: <i class="far fa-question-circle"></i>
 	                    	</label>
 	                    	<div class="form-holder">
 	                    		<input name="nombrerefed" id='nombrerefed' type="text" class="form-control">
@@ -578,8 +595,8 @@ session_start();
 	                		</div>
 	                		<div class="col-md-6">
 	                			<div class="form-row">
-	                    	<label for="">
-	                    		Apellidos:
+	                    	<label  for="">
+	                    		Apellidos: <i class="far fa-question-circle"></i>
 	                    	</label>
 	                    	<div class="form-holder">
 	                    		<input name="apellidorefed" id='apellidorefed' type="text" class="form-control">
@@ -591,8 +608,8 @@ session_start();
 	                	<div class="row mb-4">
 	                		<div class="col-md-6">
 	                			<div class="form-row">
-	                    	<label for="">
-	                    		Profesion:
+	                    	<label  for="">
+	                    		Profesion: <i class="far fa-question-circle"></i>
 	                    	</label>
 	                    	<div class="form-holder">
 	                    		<input name="profesionrefed" id='profesionrefed' type="text" class="form-control">
@@ -601,8 +618,8 @@ session_start();
 	                		</div>
 	                		<div class="col-md-6">
 	                			<div class="form-row">
-	                    	<label for="">
-	                    		Dirección:
+	                    	<label  for="">
+	                    		Dirección: <i class="far fa-question-circle"></i>
 	                    	</label>
 	                    	<div class="form-holder">
 	                    		<input name="direrefed" id='direrefed' type="text" class="form-control">
@@ -614,18 +631,18 @@ session_start();
 	                	<div class="row mb-4">
 	                		<div class="col-md-6">
 	                			<div class="form-row">
-	                    	<label for="">
-	                    		Teléfono Domicilio:
+	                    	<label  for="">
+	                    		Teléfono Domicilio: <i class="far fa-question-circle"></i>
 	                    	</label>
 	                    	<div class="form-holder">
-	                    		<input name="direrefed" id='direrefed' type="text" placeholder="Ej. 2657535 ext. 3" class="form-control">
+	                    		<input name="direrefed" id='telerefed' type="text" placeholder="Ej. 2657535 ext. 3" class="form-control">
 	                    	</div>
 	                    </div>
 	                		</div>
 	                		<div class="col-md-6">
 	                			<div class="form-row">
-	                    	<label for="">
-	                    		Teléfono de oficina:
+	                    	<label  for="">
+	                    		Teléfono de oficina: <i class="far fa-question-circle"></i>
 	                    	</label>
 	                    	<div class="form-holder">
 	                    		<input name="teleofirefed" id='teleofirefed' placeholder="Ej. 6754567 ext. 541" type="text" class="form-control">
@@ -635,8 +652,8 @@ session_start();
 	                	</div>
 
 	                    <div class="form-row">
-	                    	<label for="">
-	                    		Naturaleza de las relaciones:
+	                    	<label  for="">
+	                    		Naturaleza de las relaciones: <i class="far fa-question-circle"></i>
 	                    	</label>
 	                    	<div class="form-holder">
 	                    		<input name="vinculorefed" id='vinculorefed' type="text" class="form-control">
@@ -651,8 +668,8 @@ session_start();
 	                <section>
 	                	<h3>EMAIL DE COMUNICACION</h3>
 	                	<div class="form-row">
-	                    	<label for="">
-	                    		email:
+	                    	<label data-tooltip="Campo Requerido" for="">
+	                    		email: <i class="far fa-question-circle"></i>
 	                    	</label>
 	                    	<div class="form-holder">
 	                    		<input type="email" name="buyerEmail" id='buyerEmail' class="form-control">
@@ -679,8 +696,8 @@ session_start();
 	                    <div class="row mb-4">
 	                		<div class="col-md-6">
 	                			<div class="form-row">
-	                    	<label for="">
-	                    		Nombres
+	                    	<label data-tooltip="Campo Requerido" for="">
+	                    		Nombres <i class="far fa-question-circle"></i>
 	                    	</label>
 	                    	<div class="form-holder">
 	                    		<input name="nombreherma" id='nombreherma' type="text" class="form-control" >
@@ -689,8 +706,8 @@ session_start();
 	                		</div>
 	                		<div class="col-md-6">
 	                			<div class="form-row">
-	                    	<label for="">
-	                    		Apellido
+	                    	<label data-tooltip="Campo Requerido" for="">
+	                    		Apellido <i class="far fa-question-circle"></i>
 	                    	</label>
 	                    	<div class="form-holder">
 	                    		<input name="apellidoherma" id='apellidoherma' type="text" class="form-control">
@@ -702,14 +719,27 @@ session_start();
 	                	<div class="row mb-4">
 	                		<div class="col-md-4">
 	                			<div class="form-row">
-	                    	<label for="">
-	                    		Edad:
+	                    	<label data-tooltip="Campo Requerido" for="">
+	                    		Edad:<i class="far fa-question-circle"></i>
 	                    	</label>
 	                    	<div class="form-holder">
 	                    		<select name="edadherma" id="edadherma" class="form-control">
-	                    			<option value="frances meyer" class="option">Frances Meyer</option>
-									<option value="johan lucas" class="option">Johan Lucas</option>
-									<option value="merry linn" class="option">Merry Linn</option>
+	                    			<option value="1" class="option">1</option>
+	                    			<option value="2" class="option">2</option>
+	                    			<option value="3" class="option">3</option>
+	                    			<option value="4" class="option">4</option>
+									<option value="5" class="option">5</option>
+									<option value="6" class="option">6</option>
+									<option value="7" class="option">7</option>
+									<option value="8" class="option">8</option>
+									<option value="9" class="option">9</option>
+									<option value="10" class="option">10</option>
+									<option value="11" class="option">11</option>
+									<option value="12" class="option">12</option>
+									<option value="13" class="option">13</option>
+									<option value="14" class="option">14</option>
+									<option value="15" class="option">15</option>
+									<option value="16" class="option">16</option>
 								</select>
 								<i class="zmdi zmdi-caret-down"></i>
 	                    	</div>
@@ -718,8 +748,8 @@ session_start();
 	                		</div>
 	                		<div class="col-md-8">
 	                			<div class="form-row">
-	                    	<label for="">
-	                    		Colegio en el Cual estudia
+	                    	<label data-tooltip="Campo Requerido" for="">
+	                    		Colegio en el Cual estudia <i class="far fa-question-circle"></i>
 	                    	</label>
 	                    	<div class="form-holder">
 	                    		<input name="colegioherma" id="colegioherma" type="text" class="form-control" >
@@ -727,21 +757,7 @@ session_start();
 	                    </div>
 	                		</div>
 	                	</div>
-	                    	
-	                    	</section>
-	                    
 
-
-<!-- SECTION 8 -->
-
-	                <h4></h4>
-	                <section>
-
-	                	
-
-	                	<h3>
-	                		LISTA DE HERMANOS DEL CANDIDATO 
-	                	</h3>
 
 	                	<h4>Hermano número 2</h4>
 	                	
@@ -749,8 +765,8 @@ session_start();
 	                    <div class="row mb-4">
 	                		<div class="col-md-6">
 	                			<div class="form-row">
-	                    	<label for="">
-	                    		Nombres
+	                    	<label data-tooltip="Campo Requerido" for="">
+	                    		Nombres <i class="far fa-question-circle"></i>
 	                    	</label>
 	                    	<div class="form-holder">
 	                    		<input name="nombrehermad" id='nombrehermad' type="text" class="form-control">
@@ -759,8 +775,8 @@ session_start();
 	                		</div>
 	                		<div class="col-md-6">
 	                			<div class="form-row">
-	                    	<label for="">
-	                    		Apellido
+	                    	<label data-tooltip="Campo Requerido" for="">
+	                    		Apellido <i class="far fa-question-circle"></i>
 	                    	</label>
 	                    	<div class="form-holder">
 	                    		<input name="apellidohermad" id='apellidohermad' type="text" class="form-control" >
@@ -772,14 +788,27 @@ session_start();
 	                	<div class="row mb-4">
 	                		<div class="col-md-4">
 	                			<div class="form-row">
-	                    	<label for="">
-	                    		Edad:
+	                    	<label data-tooltip="Campo Requerido" for="">
+	                    		Edad: <i class="far fa-question-circle"></i>
 	                    	</label>
 	                    	<div class="form-holder">
 	                    		<select name="edadhermad" id="edadhermad" class="form-control">
-	                    			<option value="frances meyer" class="option">Frances Meyer</option>
-									<option value="johan lucas" class="option">Johan Lucas</option>
-									<option value="merry linn" class="option">Merry Linn</option>
+	                    			<option value="1" class="option">1</option>
+	                    			<option value="2" class="option">2</option>
+	                    			<option value="3" class="option">3</option>
+	                    			<option value="4" class="option">4</option>
+									<option value="5" class="option">5</option>
+									<option value="6" class="option">6</option>
+									<option value="7" class="option">7</option>
+									<option value="8" class="option">8</option>
+									<option value="9" class="option">9</option>
+									<option value="10" class="option">10</option>
+									<option value="11" class="option">11</option>
+									<option value="12" class="option">12</option>
+									<option value="13" class="option">13</option>
+									<option value="14" class="option">14</option>
+									<option value="15" class="option">15</option>
+									<option value="16" class="option">16</option>
 								</select>
 								<i class="zmdi zmdi-caret-down"></i>
 	                    	</div>
@@ -788,8 +817,8 @@ session_start();
 	                		</div>
 	                		<div class="col-md-8">
 	                			<div class="form-row">
-	                    	<label for="">
-	                    		Colegio en el Cual estudia
+	                    	<label data-tooltip="Campo Requerido" for="">
+	                    		Colegio en el Cual estudia <i class="far fa-question-circle"></i>
 	                    	</label>
 	                    	<div class="form-holder">
 	                    		<input name="colegiohermad" id="colegiohermad" type="text" class="form-control">
@@ -798,28 +827,14 @@ session_start();
 	                		</div>
 	                	</div>
 	                    	
-	                    	</section>
-
-
-	                    	<!-- SECTION 8 -->
-
-	                <h4></h4>
-	                <section>
-
-	                	
-
-	                	<h3>
-	                		LISTA DE HERMANOS DEL CANDIDATO 
-	                	</h3>
-
 	                	<h4>Hermano número 3</h4>
 	                	
 	                    	     
 	                    <div class="row mb-4">
 	                		<div class="col-md-6">
 	                			<div class="form-row">
-	                    	<label for="">
-	                    		Nombres
+	                    	<label data-tooltip="Campo Requerido" for="">
+	                    		Nombres <i class="far fa-question-circle"></i>
 	                    	</label>
 	                    	<div class="form-holder">
 	                    		<input type="text" class="form-control" name="nombrehermat" id='nombrehermat'>
@@ -828,8 +843,8 @@ session_start();
 	                		</div>
 	                		<div class="col-md-6">
 	                			<div class="form-row">
-	                    	<label for="">
-	                    		Apellido
+	                    	<label data-tooltip="Campo Requerido" for="">
+	                    		Apellido <i class="far fa-question-circle"></i>
 	                    	</label>
 	                    	<div class="form-holder">
 	                    		<input name="apellidohermat" id='apellidohermat' type="text" class="form-control">
@@ -841,14 +856,27 @@ session_start();
 	                	<div class="row mb-4">
 	                		<div class="col-md-4">
 	                			<div class="form-row">
-	                    	<label for="">
-	                    		Edad:
+	                    	<label data-tooltip="Campo Requerido" for="">
+	                    		Edad: <i class="far fa-question-circle"></i>
 	                    	</label>
 	                    	<div class="form-holder">
 	                    		<select name="edadhermat" id="edadhermat" class="form-control">
-	                    			<option value="frances meyer" class="option">Frances Meyer</option>
-									<option value="johan lucas" class="option">Johan Lucas</option>
-									<option value="merry linn" class="option">Merry Linn</option>
+	                    			<option value="1" class="option">1</option>
+	                    			<option value="2" class="option">2</option>
+	                    			<option value="3" class="option">3</option>
+	                    			<option value="4" class="option">4</option>
+									<option value="5" class="option">5</option>
+									<option value="6" class="option">6</option>
+									<option value="7" class="option">7</option>
+									<option value="8" class="option">8</option>
+									<option value="9" class="option">9</option>
+									<option value="10" class="option">10</option>
+									<option value="11" class="option">11</option>
+									<option value="12" class="option">12</option>
+									<option value="13" class="option">13</option>
+									<option value="14" class="option">14</option>
+									<option value="15" class="option">15</option>
+									<option value="16" class="option">16</option>
 								</select>
 								<i class="zmdi zmdi-caret-down"></i>
 	                    	</div>
@@ -857,8 +885,8 @@ session_start();
 	                		</div>
 	                		<div class="col-md-8">
 	                			<div class="form-row">
-	                    	<label for="">
-	                    		Colegio en el Cual estudia
+	                    	<label data-tooltip="Campo Requerido" for="">
+	                    		Colegio en el Cual estudia <i class="far fa-question-circle"></i>
 	                    	</label>
 	                    	<div class="form-holder">
 	                    		<input name="colegiohermat" id="colegiohermat" type="text" class="form-control" placeholder="Ex. abc 12345 or abc 1234L">
@@ -866,29 +894,14 @@ session_start();
 	                    </div>
 	                		</div>
 	                	</div>
-	                    	
-	                    	</section>
-
-
-	                    	<!-- SECTION 9 -->
-
-	                <h4></h4>
-	                <section>
-
-	                	
-
-	                	<h3>
-	                		LISTA DE HERMANOS DEL CANDIDATO 
-	                	</h3>
-
-	                	<h4>Hermano número 4</h4>
+	                    		                	<h4>Hermano número 4</h4>
 	                	
 	                    	     
 	                    <div class="row mb-4">
 	                		<div class="col-md-6">
 	                			<div class="form-row">
-	                    	<label for="">
-	                    		Nombres
+	                    	<label data-tooltip="Campo Requerido" for="">
+	                    		Nombres <i class="far fa-question-circle"></i>
 	                    	</label>
 	                    	<div class="form-holder">
 	                    		<input type="text" class="form-control" name="nombrehermac" id='nombrehermac'>
@@ -897,8 +910,8 @@ session_start();
 	                		</div>
 	                		<div class="col-md-6">
 	                			<div class="form-row">
-	                    	<label for="">
-	                    		Apellido
+	                    	<label data-tooltip="Campo Requerido" for="">
+	                    		Apellido <i class="far fa-question-circle"></i>
 	                    	</label>
 	                    	<div class="form-holder">
 	                    		<input  name="apellidohermac" id='apellidohermac' type="text" class="form-control" placeholder="Ex. abc 12345 or abc 1234L">
@@ -910,14 +923,27 @@ session_start();
 	                	<div class="row mb-4">
 	                		<div class="col-md-4">
 	                			<div class="form-row">
-	                    	<label for="">
-	                    		Edad:
+	                    	<label data-tooltip="Campo Requerido" for="">
+	                    		Edad: <i class="far fa-question-circle"></i>
 	                    	</label>
 	                    	<div class="form-holder">
 	                    		<select name="edadhermac" id="edadhermac" class="form-control">
-	                    			<option value="frances meyer" class="option">Frances Meyer</option>
-									<option value="johan lucas" class="option">Johan Lucas</option>
-									<option value="merry linn" class="option">Merry Linn</option>
+	                    			<option value="1" class="option">1</option>
+	                    			<option value="2" class="option">2</option>
+	                    			<option value="3" class="option">3</option>
+	                    			<option value="4" class="option">4</option>
+									<option value="5" class="option">5</option>
+									<option value="6" class="option">6</option>
+									<option value="7" class="option">7</option>
+									<option value="8" class="option">8</option>
+									<option value="9" class="option">9</option>
+									<option value="10" class="option">10</option>
+									<option value="11" class="option">11</option>
+									<option value="12" class="option">12</option>
+									<option value="13" class="option">13</option>
+									<option value="14" class="option">14</option>
+									<option value="15" class="option">15</option>
+									<option value="16" class="option">16</option>
 								</select>
 								<i class="zmdi zmdi-caret-down"></i>
 	                    	</div>
@@ -926,8 +952,8 @@ session_start();
 	                		</div>
 	                		<div class="col-md-8">
 	                			<div class="form-row">
-	                    	<label for="">
-	                    		Colegio en el Cual estudia
+	                    	<label data-tooltip="Campo Requerido" for="">
+	                    		Colegio en el Cual estudia <i class="far fa-question-circle"></i>
 	                    	</label>
 	                    	<div class="form-holder">
 	                    		<input name="colegiohermac" id="colegiohermac" type="text" class="form-control">
@@ -936,10 +962,13 @@ session_start();
 	                		</div>
 	                	</div>
 	                    	
+
 	                    	</section>
+	                    
 
 
-	                    	<!-- SECTION 10 -->
+	                    	<!-- SECTION 8 -->
+
 
 	                <h4></h4>
 	                <section>
@@ -983,7 +1012,10 @@ session_start();
 	                	</h3>
 	                	
 	                    	 <div class="form-row" style="margin-bottom: 50px;">
-	                    	
+	                    	<div class="invalid-feedback inv-sign-legal">
+          						<b>
+          							*Acepte el tratamiento de datos para enviar la solicitud.
+          						</b></div>
 	                    	<div class="form-holder">
 	                    		<div class="checkbox-circle">
 									<label class="male">
@@ -992,8 +1024,7 @@ session_start();
 										<span class="checkmark"></span>
 									</label>
 								</div>
-								<div class="invalid-feedback inv-sign-legal">
-          						Acepte el tratamiento de datos para enviar la solicitud.</div>
+								
 	                    	</div>
 
 
@@ -1043,8 +1074,7 @@ session_start();
 	                    	
 	                    	
 
-
-						 <?php 
+<?php 
     // Generacion de Firmas 
           
 		
@@ -1052,18 +1082,20 @@ session_start();
     $iva              = 0;
     $dateRef          = 'CFR-'.date('hisdmY');
     $refVenta         = $dateRef;
-    $llave_encripcion = '4Vj8eK4rloUd272L48hsrarnUA';					
-    $usuarioId        = '508029'; //merchantId
+    $llave_encripcion = '7BLF7vyoHcVjvSN6yVt7KHd1Lm';					
+    $usuarioId        = '628342'; //merchantId
 
 
     $descripcion      = 'Gracias por elegirnos COLEGIO REFOUS mayor información. Teléfono: (57) (1) 8763197, E-mail de contacto: info@refous.com';
-    $accountId        = '512321';					
+    $accountId        = '630651';					
     $valorRefe 	      = '60000';//'60000.00';
     $firma            = $llave_encripcion.'~'.$usuarioId.'~'.$refVenta.'~'.$valorRefe.'~'.$moneda;
     $firma_codificada = md5($firma);
 
     ?>
     <!-- //ApiKey -->
+    <input name="fechasolicita" id='fechasolicita' type="hidden" value='<?php echo $fechaComHoy;?>'>
+    <input type="hidden" name="padecimientocan" id="padecimientocan" value="">
      <input name="ApiKey" id="ApiKey" type="hidden" value="<?php echo $llave_encripcion;?>">
     <!-- //Identificación merchantId -->
      <input name="merchantId" id="merchantId" type="hidden" value="<?php echo $usuarioId;?>">
@@ -1100,7 +1132,50 @@ session_start();
     <!-- //responseUrl Url pagina de respuesta   -->
      <input name="consecutivoFor" id="consecutivoFor" type="hidden" value="<?php echo $consecutivoA;?>">
      </section>
-  
+
+<h4></h4>
+
+
+<section>
+	<div class="d-none" id="success-message">
+            			<div class="row">
+            				<div class="row">
+            					<div class="col-md-12">
+            						<h4 >Admision N° <?php echo $consecutivoA; ?> <span id="admisionNumber"></span> Guardada! <br>
+            						último paso - realizado el pago seguro en PayuLatam</h4>
+
+            						 <p  class="text-warning font-weight-bold">Nota Importante: Para Crear la admisión exitosamente debes regresar a nuestro sitio Web, una vez hayas terminado el proceso de pago en Payu latam <br> Dandole click al link: </p>
+
+	                				<img src="images/gobackTohome.jpg">
+									<br>
+            					</div>	
+            				</div>
+            			</div>
+            		</div>
+<div class="d-block" id="last-Step-submitform">
+	
+
+
+<h3>
+	                		REALIZAR EL PAGO POR MEDIO DE LA PLATAFORMA PAYULATAM 
+	                	</h3>
+	                	<div class="row">
+	                		<div class="col-md-12">
+	                			<h4 class="text-lowercase"> <b>Listo!</b> Hemos recogido todos los datos necesarios para Diligenciar la admision, pero primero que todo debes pagar por medio de la plataforma de pago Payu Latam.</h4>
+
+	                			<p  class="text-warning font-weight-bold">Nota Importante: Para Crear la admisión exitosamente debes regresar a nuestro sitio Web, una vez hayas terminado el proceso de pago en Payu latam <br> Dandole click al link: </p>
+
+	                			<img src="images/gobackTohome.jpg">
+								<br>
+	                			<p  class="text-warning font-weight-bold">En Caso contrario no se guardará en nuestra base de datos.</p>
+
+	                		</div>
+	                	</div>
+	                
+</div>    	
+
+
+</section>  
             	</div>
             </form>
 		</div>
