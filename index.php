@@ -77,10 +77,10 @@ session_start();
 
 		<div class="wrapper">
 			<div class="GobackButton">
-				<a href="https://colegiorefous.edu.co/admisiones.php"> <i class="fas fa-angle-left"></i> Volver al página del Refous</a>
+				<a href="https://colegiorefous.edu.co/admisiones.php"> <i class="fas fa-angle-left"></i> VOLVER A LA PÁGINA DEL COLEGIO REFOUS</a>
 			</div>
 			<div class="image-holder">
-				<h1>FORMULARIO DE ADMISION</h1><br>
+				<h1>FORMULARIO DE ADMISIÓN</h1><br>
 				<img src="../images/logo.svg" width="200" alt="">
 			</div>
             <form method="post" id="frmaccion" action="https://checkout.payulatam.com/ppp-web-gateway-payu/" target="_blank" novalidate >
@@ -147,7 +147,7 @@ session_start();
 	                    		Nombres del candidato: <i class="far fa-question-circle"></i>
 	                    		</label>
 	                    		<div class="form-holder">
-	                    			<input type="text" class="form-control" name="nombrecan" id="nombrecan" type="text" placeholder="1. Nombres del candidato *" required>
+	                    			<input type="text" class="form-control" name="nombrecan" id="nombrecan" type="text" placeholder="Nombres del candidato *" required>
 	                    		</div>
 	                    		<div class="invalid-feedback inv-sign-nombrecan">
           						Campo obligatorio.</div>
@@ -159,7 +159,7 @@ session_start();
 		                    		Apellidos del candidato: <i class="far fa-question-circle"></i>
 		                    		</label>
 		                    		<div class="form-holder">
-		                    			<input type="text" class="form-control" name="apellidocan" id="apellidocan" placeholder="1. Apellidos del candidato *" required>
+		                    			<input type="text" class="form-control" name="apellidocan" id="apellidocan" placeholder="Apellidos del candidato *" required>
 		                    		</div>
 		                    		<div class="invalid-feedback inv-sign-apellidocan">
 		                    		Campo obligatorio.</div>
@@ -224,7 +224,6 @@ session_start();
 									<option value="8" class="option">8</option>
 									<option value="9" class="option">9</option>
 									<option value="10" class="option">10</option>
-									<option value="11" class="option">11</option>
 								</select>
 								<i class="zmdi zmdi-caret-down"></i>
 	                    	</div>
@@ -305,7 +304,7 @@ session_start();
 	                    		Dirección de Domicilio: <i class="far fa-question-circle"></i>
 	                    	</label>
 	                    	<div class="form-holder">
-	                    		<input type="text" placeholder="Dirección de domicilio" name="dirpadre" id='dirpadre' class="form-control" required>
+	                    		<input type="text" placeholder="DIRECCIÓN COMPLETA" name="dirpadre" id='dirpadre' class="form-control" required>
 	                    	</div>
 	                    	<div class="invalid-feedback inv-sign-dirpadre">
           						Campo obligatorio.</div>
@@ -317,7 +316,7 @@ session_start();
 			                    		Teléfono: <i class="far fa-question-circle"></i>
 			                    	</label>
 			                    	<div class="form-holder">
-			                    		<input name="telpadre" id='telpadre' placeholder="ej. 3168669379 o 32395421" type="text" class="form-control" required>
+			                    		<input name="telpadre" id='telpadre' placeholder="EJ. 3168669379" type="text" class="form-control" required>
 			                    	</div>
 			                    	<div class="invalid-feedback inv-sign-telpadre">
           						Campo obligatorio.</div>
@@ -332,7 +331,7 @@ session_start();
 			                    		Dirección de oficina: <i class="far fa-question-circle"></i>
 			                    	</label>
 			                    	<div class="form-holder">
-			                    		<input name="direofipadre" id='direofipadre'  type="text" class="form-control" required>
+			                    		<input name="direofipadre" id='direofipadre'  type="text" class="form-control" placeholder="DIRECCIÓN COMPLETA" required>
 			                    	</div>
 			                    	<div class="invalid-feedback inv-sign-direofipadre">
           						Campo obligatorio.</div>
@@ -344,7 +343,7 @@ session_start();
 	                    		Teléfono de oficina: <i class="far fa-question-circle"></i>
 	                    	</label>
 	                    	<div class="form-holder">
-	                    		<input name="teleofipadre" id='teleofipadre' type="text" placeholder="Ej. 13524852 ext 1" class="form-control" required>
+	                    		<input name="teleofipadre" id='teleofipadre' type="text" placeholder="EJ. 13524852 ext 1" class="form-control" required>
 	                    	</div>
 	                    	<div class="invalid-feedback inv-sign-teleofipadre">
           						Campo obligatorio.</div>
@@ -423,7 +422,7 @@ session_start();
 	                    		Dirección de Domicilio: <i class="far fa-question-circle"></i>
 	                    	</label>
 	                    	<div class="form-holder">
-	                    		<input name="dirmadre" id='dirmadre' type="text" class="form-control">
+	                    		<input name="dirmadre" id='dirmadre' type="text" class="form-control" placeholder="DIRECCIÓN COMPLETA">
 	                    	</div>
 	                    	<div class="invalid-feedback inv-sign-dirmadre">
           						Campo obligatorio.</div>
@@ -479,7 +478,7 @@ session_start();
 	               <h4></h4>
 	                <section>
 	                	<h3>REFERENCIAS</h3>
-	                	<h4>25. REFERENCIA PERSONAL</h4>
+	                	<h4> REFERENCIA PERSONAL</h4>
 	                	<div class="row mb-4">
 	                		<div class="col-md-6">
 	                			<div class="form-row">
@@ -580,7 +579,7 @@ session_start();
 					<h4></h4>
 	                <section>
 	                	<h3>REFERENCIAS</h3>
-	                	<h4>26. REFERENCIA DEL COLEGIO</h4>
+	                	<h4> REFERENCIA DEL COLEGIO</h4>
 
 	                	<div class="row mb-4">
 	                		<div class="col-md-6">
