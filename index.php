@@ -435,7 +435,7 @@ session_start();
 	                    		Teléfono: <i class="far fa-question-circle"></i>
 	                    	</label>
 	                    	<div class="form-holder">
-	                    		<input name="telmadre" id='telmadre' placeholder="Ej 3152388431 o 314565 ext 1" type="text" class="form-control">
+	                    		<input name="telmadre" id='telmadre' placeholder="Ej 3152388431" type="text" class="form-control">
 	                    	</div>
 	                    	<div class="invalid-feedback inv-sign-telmadre">
           						Campo obligatorio.</div>
@@ -448,7 +448,7 @@ session_start();
 	                    		Dirección de oficina: <i class="far fa-question-circle"></i>
 	                    	</label>
 	                    	<div class="form-holder">
-	                    		<input name="direofimadre" id='direofimadre' type="text" class="form-control">
+	                    		<input name="direofimadre" id='direofimadre' type="text" class="form-control" placeholder="DIRECCIÓN COMPLETA">
 	                    	</div>
 	                    	<div class="invalid-feedback inv-sign-direofimadre">
           						Campo obligatorio.</div>
