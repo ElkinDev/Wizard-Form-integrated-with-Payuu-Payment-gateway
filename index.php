@@ -368,7 +368,7 @@ session_start();
 	                    		Nombres de la madre: <i class="far fa-question-circle"></i>
 	                    	</label>
 	                    	<div class="form-holder">
-	                    		<input type="text" name="nombremadre" id="nombremadre" class="form-control">
+	                    		<input type="text" name="nombremadre" id="nombremadre" class="form-control" placeholder="Nombres de la madre">
 	                    	</div>
 	                    	<div class="invalid-feedback inv-sign-nombremadre">
           						Campo obligatorio.</div>
@@ -380,7 +380,7 @@ session_start();
 	                    		Apellidos de la madre: <i class="far fa-question-circle"></i>
 	                    	</label>
 	                    	<div class="form-holder">
-	                    		<input name="apellidomadre" id='apellidomadre' type="text" class="form-control">
+	                    		<input name="apellidomadre" id='apellidomadre' type="text" class="form-control" placeholder="Apellidos de la madre">
 	                    	</div>
 	                    	<div class="invalid-feedback inv-sign-apellidomadre">
           						Campo obligatorio.</div>
@@ -394,7 +394,7 @@ session_start();
 	                    		Número de cédula: <i class="far fa-question-circle"></i>
 	                    	</label>
 	                    	<div class="form-holder">
-	                    		<input name="ccmadre" id='ccmadre' type="text"  class="form-control">
+	                    		<input name="ccmadre" id='ccmadre' type="text"  class="form-control" placeholder="cc. No.">
 	                    	</div>
 	                    	<div class="invalid-feedback inv-sign-ccmadre">
           						Campo obligatorio.</div>
@@ -407,7 +407,7 @@ session_start();
 	                    		Profesion: <i class="far fa-question-circle"></i>
 	                    	</label>
 	                    	<div class="form-holder">
-	                    		<input name="profesionmadre" id='profesionmadre'  type="text" class="form-control">
+	                    		<input name="profesionmadre" id='profesionmadre'  type="text" class="form-control" placeholder="Profesión">
 	                    	</div>
 	                    	<div class="invalid-feedback inv-sign-profesionmadre">
           						Campo obligatorio.</div>
