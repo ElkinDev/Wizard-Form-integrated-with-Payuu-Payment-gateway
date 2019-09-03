@@ -316,7 +316,7 @@ session_start();
 			                    		Teléfono: <i class="far fa-question-circle"></i>
 			                    	</label>
 			                    	<div class="form-holder">
-			                    		<input name="telpadre" id='telpadre' placeholder="EJ. 3168669379" type="text" class="form-control" required>
+			                    		<input name="telpadre" id='telpadre' placeholder="EJ. 3152388431" type="text" class="form-control" required>
 			                    	</div>
 			                    	<div class="invalid-feedback inv-sign-telpadre">
           						Campo obligatorio.</div>
@@ -343,7 +343,7 @@ session_start();
 	                    		Teléfono de oficina: <i class="far fa-question-circle"></i>
 	                    	</label>
 	                    	<div class="form-holder">
-	                    		<input name="teleofipadre" id='teleofipadre' type="text" placeholder="EJ. 13524852 ext 1" class="form-control" required>
+	                    		<input name="teleofipadre" id='teleofipadre' type="text" placeholder="EJ. 3975285 ext. 342" class="form-control" required>
 	                    	</div>
 	                    	<div class="invalid-feedback inv-sign-teleofipadre">
           						Campo obligatorio.</div>
@@ -461,7 +461,7 @@ session_start();
 		                    		Teléfono de oficina: <i class="far fa-question-circle"></i>
 		                    	</label>
 		                    	<div class="form-holder">
-		                    		<input name="teleofimadre" id='teleofimadre' placeholder="Ej. 3975285 ext 342" type="text" class="form-control">
+		                    		<input name="teleofimadre" id='teleofimadre' placeholder="Ej. 3975285 ext. 342" type="text" class="form-control">
 		                    	</div>
 		                    	<div class="invalid-feedback inv-sign-teleofimadre">
           						Campo obligatorio.</div>
@@ -551,7 +551,7 @@ session_start();
 	                    		Teléfono de oficina: <i class="far fa-question-circle"></i>
 	                    	</label>
 	                    	<div class="form-holder">
-	                    		<input name="teleofirefeu" id='teleofirefeu' placeholder="Ej. 6754567 ext. 541" type="text" class="form-control">
+	                    		<input name="teleofirefeu" id='teleofirefeu' placeholder="Ej. 3975285 ext. 342" type="text" class="form-control">
 	                    	</div>
 	                    	<div class="invalid-feedback inv-sign-teleofirefeu">
           						Campo obligatorio.</div>
@@ -644,7 +644,7 @@ session_start();
 	                    		Teléfono de oficina: <i class="far fa-question-circle"></i>
 	                    	</label>
 	                    	<div class="form-holder">
-	                    		<input name="teleofirefed" id='teleofirefed' placeholder="Ej. 6754567 ext. 541" type="text" class="form-control">
+	                    		<input name="teleofirefed" id='teleofirefed' placeholder="Ej. 3975285 ext. 342" type="text" class="form-control">
 	                    	</div>
 	                    </div>
 	                		</div>
