@@ -665,7 +665,7 @@ session_start();
 
 					<h4></h4>
 	                <section>
-	                	<h3>EMAIL DE COMUNICACION</h3>
+	                	<h3>EMAIL DE COMUNICACIÓN</h3>
 	                	<div class="form-row">
 	                    	<label data-tooltip="Campo Requerido" for="">
 	                    		email: <i class="far fa-question-circle"></i>
@@ -706,7 +706,7 @@ session_start();
 	                		<div class="col-md-6">
 	                			<div class="form-row">
 	                    	<label data-tooltip="Campo Requerido" for="">
-	                    		Apellido <i class="far fa-question-circle"></i>
+	                    		Apellidos <i class="far fa-question-circle"></i>
 	                    	</label>
 	                    	<div class="form-holder">
 	                    		<input name="apellidoherma" id='apellidoherma' type="text" class="form-control">
@@ -775,7 +775,7 @@ session_start();
 	                		<div class="col-md-6">
 	                			<div class="form-row">
 	                    	<label data-tooltip="Campo Requerido" for="">
-	                    		Apellido <i class="far fa-question-circle"></i>
+	                    		Apellidos <i class="far fa-question-circle"></i>
 	                    	</label>
 	                    	<div class="form-holder">
 	                    		<input name="apellidohermad" id='apellidohermad' type="text" class="form-control" >
@@ -817,7 +817,7 @@ session_start();
 	                		<div class="col-md-8">
 	                			<div class="form-row">
 	                    	<label data-tooltip="Campo Requerido" for="">
-	                    		Colegio en el Cual estudia <i class="far fa-question-circle"></i>
+	                    		Colegio en el cual estudia <i class="far fa-question-circle"></i>
 	                    	</label>
 	                    	<div class="form-holder">
 	                    		<input name="colegiohermad" id="colegiohermad" type="text" class="form-control">
@@ -843,7 +843,7 @@ session_start();
 	                		<div class="col-md-6">
 	                			<div class="form-row">
 	                    	<label data-tooltip="Campo Requerido" for="">
-	                    		Apellido <i class="far fa-question-circle"></i>
+	                    		Apellidos <i class="far fa-question-circle"></i>
 	                    	</label>
 	                    	<div class="form-holder">
 	                    		<input name="apellidohermat" id='apellidohermat' type="text" class="form-control">
@@ -885,10 +885,10 @@ session_start();
 	                		<div class="col-md-8">
 	                			<div class="form-row">
 	                    	<label data-tooltip="Campo Requerido" for="">
-	                    		Colegio en el Cual estudia <i class="far fa-question-circle"></i>
+	                    		Colegio en el cual estudia <i class="far fa-question-circle"></i>
 	                    	</label>
 	                    	<div class="form-holder">
-	                    		<input name="colegiohermat" id="colegiohermat" type="text" class="form-control" placeholder="Ex. abc 12345 or abc 1234L">
+	                    		<input name="colegiohermat" id="colegiohermat" type="text" class="form-control" placeholder="">
 	                    	</div>
 	                    </div>
 	                		</div>
@@ -910,10 +910,10 @@ session_start();
 	                		<div class="col-md-6">
 	                			<div class="form-row">
 	                    	<label data-tooltip="Campo Requerido" for="">
-	                    		Apellido <i class="far fa-question-circle"></i>
+	                    		Apellidos <i class="far fa-question-circle"></i>
 	                    	</label>
 	                    	<div class="form-holder">
-	                    		<input  name="apellidohermac" id='apellidohermac' type="text" class="form-control" placeholder="Ex. abc 12345 or abc 1234L">
+	                    		<input  name="apellidohermac" id='apellidohermac' type="text" class="form-control" placeholder="">
 	                    	</div>
 	                    </div>
 	                		</div>
@@ -952,7 +952,7 @@ session_start();
 	                		<div class="col-md-8">
 	                			<div class="form-row">
 	                    	<label data-tooltip="Campo Requerido" for="">
-	                    		Colegio en el Cual estudia <i class="far fa-question-circle"></i>
+	                    		Colegio en el cual estudia <i class="far fa-question-circle"></i>
 	                    	</label>
 	                    	<div class="form-holder">
 	                    		<input name="colegiohermac" id="colegiohermac" type="text" class="form-control">
@@ -1140,10 +1140,12 @@ session_start();
             			<div class="row">
             				<div class="row">
             					<div class="col-md-12">
-            						<h4 >Admision N° <?php echo $consecutivoA; ?> <span id="admisionNumber"></span> Guardada! <br>
+            						<h4 >Admisión N° <?php echo $consecutivoA; ?> <span id="admisionNumber"></span> Guardada <br>
             						último paso - realizado el pago seguro en PayuLatam</h4>
 
-            						 <p  class="text-warning font-weight-bold">Nota Importante: Para Crear la admisión exitosamente debes regresar a nuestro sitio Web, una vez hayas terminado el proceso de pago en Payu latam <br> Dandole click al link: </p>
+            						 <p  class="text-warning font-weight-bold">
+            						 	Regrese a nuestro Portal Web una vez haya terminado el proceso de pago en PayU Latam, de lo contrario, su información no se guardará en nuestra base de datos.
+            						 	<br>De clic en el enlace para regresar: </p>
 
 	                				<img src="images/gobackTohome.jpg">
 									<br>
@@ -1156,18 +1158,17 @@ session_start();
 
 
 <h3>
-	                		REALIZAR EL PAGO POR MEDIO DE LA PLATAFORMA PAYULATAM 
+	                		REALIZAR EL PAGO POR MEDIO DE LA PLATAFORMA PAYU LATAM 
 	                	</h3>
 	                	<div class="row">
 	                		<div class="col-md-12">
-	                			<h4 class="text-lowercase"> <b>Listo!</b> Hemos recogido todos los datos necesarios para Diligenciar la admision, pero primero que todo debes pagar por medio de la plataforma de pago Payu Latam.</h4>
-
-	                			<p  class="text-warning font-weight-bold">Nota Importante: Para Crear la admisión exitosamente debes regresar a nuestro sitio Web, una vez hayas terminado el proceso de pago en Payu latam <br> Dandole click al link: </p>
+	                			<h4 class="text-lowercase"> <b>Listo!</b> El primer paso de diligenciar el formulario ha sido completado con éxito, ahora por favor diríjase a la plataforma PayU Latam y realice el pago para finalizar el proceso.</h4>
+<br>	
+	                			<p  class="text-warning font-weight-bold">
+	                			NOTA IMPORTANTE: Debe regresar a nuestro Portal Web una vez haya terminado el proceso de pago en PayU Latam, de lo contrario, su información no se guardará en nuestra base de datos. <br>	De clic en el enlace para regresar: </p>
 
 	                			<img src="images/gobackTohome.jpg">
 								<br>
-	                			<p  class="text-warning font-weight-bold">En Caso contrario no se guardará en nuestra base de datos.</p>
-
 	                		</div>
 	                	</div>
 	                
