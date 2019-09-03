@@ -435,7 +435,7 @@ session_start();
 	                    		Teléfono: <i class="far fa-question-circle"></i>
 	                    	</label>
 	                    	<div class="form-holder">
-	                    		<input name="telmadre" id='telmadre' placeholder="Ej 3152388431" type="text" class="form-control">
+	                    		<input name="telmadre" id='telmadre' placeholder="Ej. 3152388431" type="text" class="form-control">
 	                    	</div>
 	                    	<div class="invalid-feedback inv-sign-telmadre">
           						Campo obligatorio.</div>
@@ -486,7 +486,7 @@ session_start();
 		                    		Nombres: <i class="far fa-question-circle"></i>
 		                    	</label>
 		                    	<div class="form-holder">
-		                    		<input name="nombrerefeu" id='nombrerefeu'type="text" class="form-control">
+		                    		<input name="nombrerefeu" id='nombrerefeu'type="text" class="form-control" placeholder="Nombres">
 		                    	</div>
 		                    	<div class="invalid-feedback inv-sign-nombrerefeu">
           						Campo obligatorio.</div>
@@ -498,7 +498,7 @@ session_start();
 	                    		Apellidos:<i class="far fa-question-circle"></i>
 	                    	</label> 
 	                    	<div class="form-holder">
-	                    		<input name="apellidorefeu" id='apellidorefeu' type="text" class="form-control">
+	                    		<input name="apellidorefeu" id='apellidorefeu' type="text" class="form-control" placeholder="Apellidos">
 	                    	</div>
 	                    	<div class="invalid-feedback inv-sign-apellidorefue">
           						Campo obligatorio.</div>
@@ -512,7 +512,7 @@ session_start();
 	                    		Profesion: <i class="far fa-question-circle"></i>
 	                    	</label>
 	                    	<div class="form-holder">
-	                    		<input name="profesionrefeu" id='profesionrefeu' type="text" class="form-control">
+	                    		<input name="profesionrefeu" id='profesionrefeu' type="text" class="form-control" placeholder="Profesión Actual">
 	                    	</div>
 	                    	<div class="invalid-feedback inv-sign-profesionrefeu">
           						Campo obligatorio.</div>
@@ -524,7 +524,7 @@ session_start();
 	                    		Dirección: <i class="far fa-question-circle"></i>
 	                    	</label>
 	                    	<div class="form-holder">
-	                    		<input name="direrefeu" id='direrefeu' type="text" class="form-control">
+	                    		<input name="direrefeu" id='direrefeu' type="text" class="form-control" placeholder="DIRECCIÓN COMPLETA">
 	                    	</div>
 	                    	<div class="invalid-feedback inv-sign-direrefeu">
           						Campo obligatorio.</div>
@@ -539,7 +539,7 @@ session_start();
 	                    		Teléfono Domicilio: <i class="far fa-question-circle"></i>
 	                    	</label>
 	                    	<div class="form-holder">
-	                    		<input name="telerefeu" id='telerefeu' type="text" placeholder="Ej. 3168669379 o 4561234" class="form-control">
+	                    		<input name="telerefeu" id='telerefeu' type="text" placeholder="Ej. 3152388431" class="form-control">
 	                    	</div>
 	                    	<div class="invalid-feedback inv-sign-telerefeu">
           						Campo obligatorio.</div>
@@ -588,7 +588,7 @@ session_start();
 	                    		Nombres: <i class="far fa-question-circle"></i>
 	                    	</label>
 	                    	<div class="form-holder">
-	                    		<input name="nombrerefed" id='nombrerefed' type="text" class="form-control">
+	                    		<input name="nombrerefed" id='nombrerefed' type="text" class="form-control" placeholder="Nombres">
 	                    	</div>
 	                    </div>
 	                		</div>
@@ -598,7 +598,7 @@ session_start();
 	                    		Apellidos: <i class="far fa-question-circle"></i>
 	                    	</label>
 	                    	<div class="form-holder">
-	                    		<input name="apellidorefed" id='apellidorefed' type="text" class="form-control">
+	                    		<input name="apellidorefed" id='apellidorefed' type="text" class="form-control" placeholder="Apellidos">
 	                    	</div>
 	                    </div>
 	                		</div>
@@ -611,7 +611,7 @@ session_start();
 	                    		Profesion: <i class="far fa-question-circle"></i>
 	                    	</label>
 	                    	<div class="form-holder">
-	                    		<input name="profesionrefed" id='profesionrefed' type="text" class="form-control">
+	                    		<input name="profesionrefed" id='profesionrefed' type="text" class="form-control" placeholder="Profesión Actual">
 	                    	</div>
 	                    </div>
 	                		</div>
@@ -621,7 +621,7 @@ session_start();
 	                    		Dirección: <i class="far fa-question-circle"></i>
 	                    	</label>
 	                    	<div class="form-holder">
-	                    		<input name="direrefed" id='direrefed' type="text" class="form-control">
+	                    		<input name="direrefed" id='direrefed' type="text" class="form-control" placeholder="dirección COMPLETA">
 	                    	</div>
 	                    </div>
 	                		</div>
@@ -634,7 +634,7 @@ session_start();
 	                    		Teléfono Domicilio: <i class="far fa-question-circle"></i>
 	                    	</label>
 	                    	<div class="form-holder">
-	                    		<input name="direrefed" id='telerefed' type="text" placeholder="Ej. 2657535 ext. 3" class="form-control">
+	                    		<input name="direrefed" id='telerefed' type="text" placeholder="Ej. 3152388431" class="form-control">
 	                    	</div>
 	                    </div>
 	                		</div>
